@@ -5,7 +5,7 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity  //告诉JPA这是一个实体类
-@Table(name = "users")  //指定映射的表名，如果省略，则默认是user
+@Table(name = "users")  //指定映射的表名，如果省略，则默认是类的小写名user
 public class User
 {
 
