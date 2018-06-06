@@ -1,37 +1,36 @@
 package com.whut.springbootjpacementv4_1.controller;
 
-import com.whut.springbootjpacementv4_1.repository.UserRepository;
+import com.whut.springbootjpacementv4_1.service.UserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.whut.springbootjpacementv4_1.entity.User;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.*;
 
 @RestController
 @RequestMapping(value = "/users")
 public class UserController {
      //创建线程安全的Map
-   static Map<Integer,User> users=Collections.synchronizedMap(new HashMap<Integer,User>());
+   static Map<Integer,User> users=Collections.synchronizedMap(new HashMap<>());
 
    @Autowired
-    UserRepository userRepository;
+   UserServiceImp userServiceImp;
 
     @RequestMapping(value = "/{id}",method = RequestMethod.GET)
     public User getUserById(@PathVariable("id") Integer id){
         //处理 /users/{id}的get请求，用来获取相应单个id的用户
-        User user=userRepository.findById(id).orElse(null);
-         return user;
+        return userServiceImp.getUserById(id);
+
     }
 
-    @RequestMapping(value = "/",method = RequestMethod.GET)
+    @RequestMapping(value = "/list",method = RequestMethod.GET)
     public List<User> getUserList(){
         //处理 /users/ 的get请求，获取用户列表
-        List<User> userList=new ArrayList<User>(users.values());
+        List<User> userList=new ArrayList<>(users.values());
         return  userList;
     }
 
-    @RequestMapping(value = "/",method = RequestMethod.POST)
-    public String postUser(@ModelAttribute User user){
+    @RequestMapping(value = "/{id}",method = RequestMethod.POST)
+    public String postUser(@ModelAttribute User user,@PathVariable("id")Integer id){
         //处理 /users/的post请求 用来创建用户
         //除了 @ModelAttribute 绑定参数外，还可以通过@RequestParam来传递页面参数
         users.put(user.getId(),user);
