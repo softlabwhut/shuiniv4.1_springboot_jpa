@@ -11,6 +11,7 @@ import java.util.Map;
 //继承JpaRepository来完成对数据库的操作
 public interface UserRepository extends JpaRepository<User,Integer> {
     User findUserById(Integer id);
+    User findUserByEmail(String email);
 
 
 }

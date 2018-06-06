@@ -13,7 +13,7 @@ public class LoginServiceImp implements LoginService {
 
     @Autowired
     LoginRepository loginRepository;
-
+     //用户登录业务逻辑简单实现
     public Result login(HttpServletRequest request, HttpSession session) {
 
          String email=request.getParameter("email");
@@ -22,16 +22,10 @@ public class LoginServiceImp implements LoginService {
 
         if (user!=null)
         {
-           if ( (user.getEmail()==(email))&&(user.getPassword()==(password)))
-           {
                return new  Result(user);
-
-           }
-               return new Result(101,"用户名或密码错误");
-
         }
         else{
-               return new Result(100,"用户不存在");
+               return new Result(100,"用户名或密码错误"); //错误代码100代表用户名或密码错误
 
         }
     }

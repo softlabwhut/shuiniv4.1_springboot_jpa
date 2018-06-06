@@ -3,6 +3,7 @@ package com.whut.springbootjpacementv4_1.entity;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.sql.Timestamp;
 
 @Entity  //告诉JPA这是一个实体类
 @Table(name = "users")  //指定映射的表名，如果省略，则默认是类的小写名user
@@ -30,7 +31,7 @@ public class User
     private String location;
 
     @Column(name = "status")
-    public Integer status;
+    private  Integer status;
 
     @Column(name = "description")
     private String description;
@@ -39,13 +40,14 @@ public class User
     private Byte role;
 
     @Column(name = "created_at")
-    private Date created_at;
+    private Timestamp created_at;
 
     @Column(name = "updated_at")
-    private Date updated_at;
+    private Timestamp updated_at;
 
     @Column(name = "remember_token")
     private String remember_token;
+
     public Integer getId() {
         return id;
     }
@@ -110,19 +112,19 @@ public class User
         this.role = role;
     }
 
-    public Date getCreated_at() {
+    public Timestamp getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(Date created_at) {
+    public void setCreated_at(Timestamp created_at) {
         this.created_at = created_at;
     }
 
-    public Date getUpdated_at() {
+    public Timestamp getUpdated_at() {
         return updated_at;
     }
 
-    public void setUpdated_at(Date updated_at) {
+    public void setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
     }
 

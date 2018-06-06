@@ -84,6 +84,12 @@
 			<scope>test</scope>
 		</dependency>
 		<!--日志end-->
+		<!-- https://mvnrepository.com/artifact/com.github.penggle/kaptcha 验证码插件-->
+		<dependency>
+			<groupId>com.github.penggle</groupId>
+			<artifactId>kaptcha</artifactId>
+			<version>2.3.2</version>
+		</dependency>
 	</dependencies>
 
 	<build>

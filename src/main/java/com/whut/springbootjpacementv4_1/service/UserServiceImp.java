@@ -16,4 +16,8 @@ public class UserServiceImp implements UserService{
         return userRepository.findUserById(id);
 
     }
+    public User getUserByEmail(String email){
+        return  userRepository.findUserByEmail(email);
+    }
+
 }
