@@ -4,14 +4,12 @@ import com.whut.springbootjpacementv4_1.bean.Result;
 import com.whut.springbootjpacementv4_1.entity.User;
 import com.whut.springbootjpacementv4_1.repository.RegisterRepository;
 import com.whut.springbootjpacementv4_1.repository.UserRepository;
-import org.hibernate.query.criteria.internal.expression.function.CurrentTimestampFunction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 
 @Service
 public class RegisterServiceImp implements RegisterService{
