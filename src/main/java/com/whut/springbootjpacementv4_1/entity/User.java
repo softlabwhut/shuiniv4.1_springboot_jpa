@@ -1,12 +1,14 @@
 package com.whut.springbootjpacementv4_1.entity;
 
 
+import org.hibernate.validator.constraints.UniqueElements;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
 
 @Entity  //告诉JPA这是一个实体类
-@Table(name = "users")  //指定映射的表名，如果省略，则默认是类的小写名user
+@Table(name = "users",uniqueConstraints = {@UniqueConstraint(columnNames={"id", "email"})})  //指定映射的表名，如果省略，则默认是类的小写名user
 public class User
 {
 

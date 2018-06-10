@@ -1,57 +1,87 @@
 package com.whut.springbootjpacementv4_1.controller;
 
+import com.whut.springbootjpacementv4_1.bean.Result;
+import com.whut.springbootjpacementv4_1.service.RegisterServiceImp;
 import com.whut.springbootjpacementv4_1.service.UserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.whut.springbootjpacementv4_1.entity.User;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.*;
 
 @RestController
 @RequestMapping(value = "/users")
 public class UserController {
      //创建线程安全的Map
-   static Map<Integer,User> users=Collections.synchronizedMap(new HashMap<>());
+   //static Map<Integer,User> users=Collections.synchronizedMap(new HashMap<>());
 
    @Autowired
    UserServiceImp userServiceImp;
 
+   @Autowired
+   RegisterServiceImp registerServiceImp;
+
     @RequestMapping(value = "/{id}",method = RequestMethod.GET)
-    public User getUserById(@PathVariable("id") Integer id){
+    public User getUserById(@PathVariable("id") Integer id)
+    {
         //处理 /users/{id}的get请求，用来获取相应单个id的用户
         return userServiceImp.getUserById(id);
 
     }
 
     @RequestMapping(value = "/list",method = RequestMethod.GET)
-    public List<User> getUserList(){
+    public List<User> getUserList()
+    {
         //处理 /users/ 的get请求，获取用户列表
-        List<User> userList=new ArrayList<>(users.values());
-        return  userList;
+       // List<User> userList=new ArrayList<>(users.values());
+        return  userServiceImp.getAll();
     }
 
-    @RequestMapping(value = "/{id}",method = RequestMethod.POST)
-    public String postUser(@ModelAttribute User user,@PathVariable("id")Integer id){
-        //处理 /users/的post请求 用来创建用户
+    //处理 /users/的post请求 用来创建用户
+    @RequestMapping(value = "/add",method = RequestMethod.POST)
+    public Result addUser(@ModelAttribute User user,
+                          @RequestParam("id")Integer id,
+                          @RequestParam("username")String username,@RequestParam("email")String email,
+                          @RequestParam("password")String password,@RequestParam("description")String description,
+                          @RequestParam("location")String location,@RequestParam("role") Integer role)
+    {
+
         //除了 @ModelAttribute 绑定参数外，还可以通过@RequestParam来传递页面参数
-        users.put(user.getId(),user);
-        return "添加用户成功！";
+        //users.put(user.getId(),user);
+        if (userServiceImp.existUserById(user.getId())|userServiceImp.existUserByEmail(email))
+        {
+            return new Result(102,"用户已存在！");
+        }
+        else
+            return  userServiceImp.addUser(user);
+
     }
 
-//    @RequestMapping(value = "/{id}",method = RequestMethod.PUT)
-//    public String putUser(@PathVariable Integer id, @ModelAttribute User user){
-//        //处理 /users/{id} 的put请求，用来更新用户信息
-//        User u=users.get(id);
-//        u.setUserName(user.getUserName());
-//        u.setLocation(user.getLocation());
-//        users.put(id,u);
-//        return "修改成功！";
-//    }
+    //处理 /users/{id} 的put请求，用来更新用户信息
+    @RequestMapping(value = "/{id}",method = RequestMethod.PATCH)
+    public Result putUser (//@ModelAttribute User user,
+                          @PathVariable(name = "id") Integer id1, @RequestParam("email") String email,
+                          @RequestParam("username") String username,@RequestParam("description") String description,
+                          @RequestParam("role") Byte role,@RequestParam("status") Integer status)throws Exception
+    {
+        if (userServiceImp.getUserById(id1)==null)
+        {
+            return new Result(103,"用户不存在");
+        }
+        else{
+            User userOne=userServiceImp.getUserById(id1);
+            userServiceImp.updateUser(userOne,description,email,username,role,status);
+            return new Result(userOne);
+        }
+
+
+    }
 
     @RequestMapping(value = "/{id}",method = RequestMethod.DELETE)
     public String deleteUser(@PathVariable Integer id){
         //处理 /users/{id} 的delete请求，用来删除相应id的用户
-        users.remove(id);
-        return  "删除成功！";
+
+        return  userServiceImp.deleteUserById(id);
 
     }
 
