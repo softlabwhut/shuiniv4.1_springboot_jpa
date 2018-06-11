@@ -37,12 +37,13 @@ public class UserServiceImp implements UserService{
     public Result updateUser(User user, String description,String email,String username,Byte role,Integer status)
     {
         //User user1=userRepository.findUserById(user.getId());
+        Timestamp nowTimestamp = new Timestamp(new Date().getTime());
         user.setStatus(status);
         user.setUsername(username);
         user.setEmail(email);
         user.setRole(role);
         user.setDescription(description);
-
+        user.setUpdated_at(nowTimestamp);
         userRepository.saveAndFlush(user);
         return new Result(user);
 
@@ -92,9 +93,6 @@ public class UserServiceImp implements UserService{
     //根据email地址检查用户是否存在
     public boolean existUserByEmail(String email)
     {
-        if (userRepository.findUserByEmail(email)!=null)
-        {
-            return false;
-        }else return  true;
+        return userRepository.findUserByEmail(email) == null;
     }
 }

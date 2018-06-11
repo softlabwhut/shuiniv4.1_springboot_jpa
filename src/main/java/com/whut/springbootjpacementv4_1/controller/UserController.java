@@ -50,29 +50,28 @@ public class UserController {
         //users.put(user.getId(),user);
         if (userServiceImp.existUserById(user.getId())|userServiceImp.existUserByEmail(email))
         {
-            return new Result(102,"用户已存在！");
+            return  userServiceImp.addUser(user);
         }
         else
-            return  userServiceImp.addUser(user);
+            return new Result(102,"用户已存在！");
 
     }
 
     //处理 /users/{id} 的put请求，用来更新用户信息
-    @RequestMapping(value = "/{id}",method = RequestMethod.PATCH)
+    @RequestMapping(value = "/{id}",method = RequestMethod.PUT)
     public Result putUser (//@ModelAttribute User user,
                           @PathVariable(name = "id") Integer id1, @RequestParam("email") String email,
                           @RequestParam("username") String username,@RequestParam("description") String description,
                           @RequestParam("role") Byte role,@RequestParam("status") Integer status)throws Exception
     {
-        if (userServiceImp.getUserById(id1)==null)
-        {
-            return new Result(103,"用户不存在");
-        }
-        else{
-            User userOne=userServiceImp.getUserById(id1);
-            userServiceImp.updateUser(userOne,description,email,username,role,status);
-            return new Result(userOne);
-        }
+
+            if (userServiceImp.getUserById(id1) == null) {
+                return new Result(103, "用户不存在");
+            } else {
+                User userOne = userServiceImp.getUserById(id1);
+                userServiceImp.updateUser(userOne, description, email, username, role, status);
+                return new Result(userOne);
+            }
 
 
     }
