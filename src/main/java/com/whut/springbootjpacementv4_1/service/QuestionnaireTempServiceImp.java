@@ -2,13 +2,12 @@ package com.whut.springbootjpacementv4_1.service;
 
 import com.whut.springbootjpacementv4_1.entity.QuestionaireTemplate;
 import com.whut.springbootjpacementv4_1.repository.QuestionnaireRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public class QuestionnaireTempServiceImp implements QuestionaireTempService {
+public class QuestionnaireTempServiceImp implements QuestionnaireTempService {
 
     @Resource
     QuestionnaireRepository questionnaireRepository;
