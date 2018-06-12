@@ -3,6 +3,7 @@ package com.whut.springbootjpacementv4_1.service;
 import com.whut.springbootjpacementv4_1.bean.Result;
 import com.whut.springbootjpacementv4_1.entity.User;
 import com.whut.springbootjpacementv4_1.repository.UserRepository;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -21,8 +22,8 @@ public class UserServiceImp implements UserService{
     RegisterServiceImp registerServiceImp;
     //获取表users内所有用户实例，并按id排序
     public List<User> getAll()
-    {
-        return  userRepository.findAll(new Sort("id"));
+    {   //按照id 倒序排序
+        return  userRepository.findAll(new Sort(Sort.Direction.ASC,"id"));
     }
 
     //根据传入的id来查询用户
@@ -84,10 +85,8 @@ public class UserServiceImp implements UserService{
    //根据Id检查用户是否已存在
     public boolean existUserById(Integer id){
 
-        if (userRepository.existsById(id)){
-            return true;
-        }
-        else return  false;
+        return userRepository.existsById(id);
+
 
     }
     //根据email地址检查用户是否存在

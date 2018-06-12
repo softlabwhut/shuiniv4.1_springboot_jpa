@@ -60,15 +60,15 @@ public class UserController {
     //处理 /users/{id} 的put请求，用来更新用户信息
     @RequestMapping(value = "/{id}",method = RequestMethod.PUT)
     public Result putUser (//@ModelAttribute User user,
-                          @PathVariable(name = "id") Integer id1, @RequestParam("email") String email,
+                          @PathVariable(name = "id") Integer id, @RequestParam(value = "email") String email,
                           @RequestParam("username") String username,@RequestParam("description") String description,
-                          @RequestParam("role") Byte role,@RequestParam("status") Integer status)throws Exception
+                          @RequestParam("role") Byte role,@RequestParam("status") Integer status)
     {
 
-            if (userServiceImp.getUserById(id1) == null) {
+            if (userServiceImp.getUserById(id) == null) {
                 return new Result(103, "用户不存在");
             } else {
-                User userOne = userServiceImp.getUserById(id1);
+                User userOne = userServiceImp.getUserById(id);
                 userServiceImp.updateUser(userOne, description, email, username, role, status);
                 return new Result(userOne);
             }

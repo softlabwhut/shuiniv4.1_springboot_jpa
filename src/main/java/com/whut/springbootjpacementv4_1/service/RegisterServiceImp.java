@@ -5,6 +5,7 @@ import com.whut.springbootjpacementv4_1.entity.User;
 import com.whut.springbootjpacementv4_1.repository.RegisterRepository;
 import com.whut.springbootjpacementv4_1.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,7 +26,10 @@ public class RegisterServiceImp implements RegisterService{
         //SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         String email = request.getParameter("email");
         String username= request.getParameter("username");
-        String password= request.getParameter("password");
+        String rawPassword= request.getParameter("password");
+        BCryptPasswordEncoder bCryptPasswordEncoder=new BCryptPasswordEncoder();//密码加密
+        String password=bCryptPasswordEncoder.encode(rawPassword);
+
         Byte   role =Byte.valueOf(request.getParameter("role"));
         String userSession=session.getId();
         String description= request.getParameter("description");
