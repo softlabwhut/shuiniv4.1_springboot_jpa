@@ -2,6 +2,7 @@ package com.whut.springbootjpacementv4_1.entity;
 
 
 import org.hibernate.validator.constraints.UniqueElements;
+import org.springframework.context.annotation.Configuration;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -19,6 +20,7 @@ public class User
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
 
     @Column(name = "email")

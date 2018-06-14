@@ -51,6 +51,29 @@ public class Company {
     @Column(name = "end_date")
     private Date end_date;
 
+    public Company(Integer region_id,String name, String address, String postcode, Integer capacity,
+                   String status, String phone_number, Integer year_capacity, String remark,
+                   String invited_person, String wj_title, Date start_date, Date end_date)
+    {
+        this.region_id=region_id;
+        this.name = name;
+        this.address = address;
+        this.postcode = postcode;
+        this.capacity = capacity;
+        this.status = status;
+        this.phone_number = phone_number;
+        this.year_capacity = year_capacity;
+        this.remark = remark;
+        this.invited_person = invited_person;
+        this.wj_title = wj_title;
+        this.start_date = start_date;
+        this.end_date = end_date;
+    }
+    public Company(){
+
+    }
+
+
     public Integer getId() {
         return id;
     }

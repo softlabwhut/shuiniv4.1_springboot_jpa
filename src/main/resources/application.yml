@@ -29,5 +29,7 @@ spring:
   jpa:
     hibernate:  #更新或者创建数据表结构
       ddl-auto: update
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
       #控制台显示sql
     show-sql: true

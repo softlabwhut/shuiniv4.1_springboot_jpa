@@ -6,6 +6,7 @@ import com.whut.springbootjpacementv4_1.repository.UserRepository;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.sql.Timestamp;
 import java.util.Date;
@@ -66,11 +67,13 @@ public class UserServiceImp implements UserService{
     public Result addUser(User user){
 
          //用户若不存在，则创建用户，否则报错
-        if (user!=null) {
+        if (userRepository.findUserById(user.getId())==null&&userRepository.findUserByEmail(user.getEmail())==null) {
             Timestamp nowTimestamp = new Timestamp(new Date().getTime());
+            BCryptPasswordEncoder bCryptPasswordEncoder=new BCryptPasswordEncoder();
             user.setUpdated_at(nowTimestamp);
             user.setCreated_at(nowTimestamp);
-            user.setStatus(1);
+            user.setStatus(1);      //status=1代表用户是激活状态
+            user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));  //将密码加密存储进数据库
             userRepository.save(user);
 
             return new Result(user);

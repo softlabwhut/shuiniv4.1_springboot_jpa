@@ -39,28 +39,24 @@ public class UserController {
 
     //处理 /users/的post请求 用来创建用户
     @RequestMapping(value = "/add",method = RequestMethod.POST)
-    public Result addUser(@ModelAttribute User user,
-                          @RequestParam("id")Integer id,
+    public Result addUser(
+                          @ModelAttribute User user,
                           @RequestParam("username")String username,@RequestParam("email")String email,
-                          @RequestParam("password")String password,@RequestParam("description")String description,
+                          @RequestParam("password")String password,@RequestParam(value = "description",required = false)String description,
                           @RequestParam("location")String location,@RequestParam("role") Integer role)
     {
 
         //除了 @ModelAttribute 绑定参数外，还可以通过@RequestParam来传递页面参数
         //users.put(user.getId(),user);
-        if (userServiceImp.existUserById(user.getId())|userServiceImp.existUserByEmail(email))
-        {
             return  userServiceImp.addUser(user);
-        }
-        else
-            return new Result(102,"用户已存在！");
 
     }
 
     //处理 /users/{id} 的put请求，用来更新用户信息
     @RequestMapping(value = "/{id}",method = RequestMethod.PUT)
-    public Result putUser (//@ModelAttribute User user,
-                          @PathVariable(name = "id") Integer id, @RequestParam(value = "email") String email,
+    public Result putUser (
+            @ModelAttribute User user,
+                          @PathVariable(name = "id",required = false) Integer id, @RequestParam(value = "email") String email,
                           @RequestParam("username") String username,@RequestParam("description") String description,
                           @RequestParam("role") Byte role,@RequestParam("status") Integer status)
     {
