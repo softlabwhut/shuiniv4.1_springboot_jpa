@@ -1,4 +1,4 @@
-package com.whut.springbootjpacementv4_1.service;
+package com.whut.springbootjpacementv4_1.bean;
 
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

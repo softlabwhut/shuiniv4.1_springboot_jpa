@@ -32,10 +32,12 @@ public class UserServiceImp implements UserService{
 
         return userRepository.findUserById(id);
     }
+
     //根据传入的email查询用户
     public User getUserByEmail(String email){
         return  userRepository.findUserByEmail(email);
     }
+
     public Result updateUser(User user, String description,String email,String username,Byte role,Integer status)
     {
         //User user1=userRepository.findUserById(user.getId());
@@ -70,27 +72,23 @@ public class UserServiceImp implements UserService{
         if (userRepository.findUserById(user.getId())==null&&userRepository.findUserByEmail(user.getEmail())==null) {
             Timestamp nowTimestamp = new Timestamp(new Date().getTime());
             BCryptPasswordEncoder bCryptPasswordEncoder=new BCryptPasswordEncoder();
+            user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));  //将密码加密存储进数据库
             user.setUpdated_at(nowTimestamp);
             user.setCreated_at(nowTimestamp);
             user.setStatus(1);      //status=1代表用户是激活状态
-            user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));  //将密码加密存储进数据库
             userRepository.save(user);
 
             return new Result(user);
-
         }
         else {
             return new Result(102, "用户创建失败！");
-
         }
     }
 
    //根据Id检查用户是否已存在
-    public boolean existUserById(Integer id){
-
+    public boolean existUserById(Integer id)
+    {
         return userRepository.existsById(id);
-
-
     }
     //根据email地址检查用户是否存在
     public boolean existUserByEmail(String email)
