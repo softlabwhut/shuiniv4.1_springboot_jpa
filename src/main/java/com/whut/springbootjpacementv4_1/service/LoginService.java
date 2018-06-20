@@ -8,5 +8,5 @@ import javax.servlet.http.HttpSession;
 
 public interface LoginService {
 
-     Result login(HttpServletRequest request, HttpServletResponse response, HttpSession session);
+     Result login(String email,String password);
 }

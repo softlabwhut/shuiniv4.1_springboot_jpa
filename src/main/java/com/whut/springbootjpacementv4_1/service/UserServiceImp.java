@@ -3,7 +3,6 @@ package com.whut.springbootjpacementv4_1.service;
 import com.whut.springbootjpacementv4_1.bean.Result;
 import com.whut.springbootjpacementv4_1.entity.User;
 import com.whut.springbootjpacementv4_1.repository.UserRepository;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -47,6 +46,22 @@ public class UserServiceImp implements UserService{
         user.setEmail(email);
         user.setRole(role);
         user.setDescription(description);
+        user.setUpdated_at(nowTimestamp);
+        userRepository.saveAndFlush(user);
+        return new Result(user);
+
+    }
+    public Result updateUserPassword(User user,String rawPassword, String email,String username,Integer status)
+    {
+        //User user1=userRepository.findUserById(user.getId());
+        Timestamp nowTimestamp = new Timestamp(new Date().getTime());
+        user.setStatus(status);
+        user.setUsername(username);
+        user.setEmail(email);
+        BCryptPasswordEncoder bCryptPasswordEncoder=new BCryptPasswordEncoder();//密码加密
+        String password=bCryptPasswordEncoder.encode(rawPassword);
+
+        user.setPassword(password);
         user.setUpdated_at(nowTimestamp);
         userRepository.saveAndFlush(user);
         return new Result(user);

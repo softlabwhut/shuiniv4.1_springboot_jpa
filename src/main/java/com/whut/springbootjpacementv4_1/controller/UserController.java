@@ -71,6 +71,21 @@ public class UserController {
 
 
     }
+    @RequestMapping(value = "/{id}",method = RequestMethod.POST)
+    public Result updatePassword(@ModelAttribute User  user,@PathVariable(name = "id",required = false)Integer id,
+                                 @RequestParam(value = "password",required = false)String password,
+                                 @RequestParam(value = "status")Integer status,
+                                 @RequestParam(value = "email")String email,
+                                 @RequestParam(value = "username")String username)
+    {
+        if (userServiceImp.getUserById(id) == null) {
+            return new Result(103, "用户不存在");
+        } else {
+            User userOne = userServiceImp.getUserById(id);
+            userServiceImp.updateUserPassword(userOne,password,email,username,status);
+            return new Result(userOne);
+        }
+    }
 
     @RequestMapping(value = "/{id}",method = RequestMethod.DELETE)
     public String deleteUser(@PathVariable Integer id){

@@ -18,21 +18,21 @@ public class LoginServiceImp implements LoginService {
 
 
      //用户登录业务逻辑简单实现
-    public Result login(HttpServletRequest request, HttpServletResponse response,HttpSession session) {
+    public Result login(String email,String password) {
 
          BCryptPasswordEncoder bCryptPasswordEncoder=new BCryptPasswordEncoder();
 
-         String email=request.getParameter("email");
-         String rawPassword=request.getParameter("password");//前端传来的密码
-         String password=bCryptPasswordEncoder.encode(rawPassword);
+//        String uPassword=bCryptPasswordEncoder.encode(password);
 
          User user=loginRepository.findUserByEmail(email);
+        System.out.println(password);
 
-        if (user!=null&&bCryptPasswordEncoder.matches(rawPassword,user.getPassword()))//校验密码
+        if (user!=null&&bCryptPasswordEncoder.matches(password,user.getPassword()))//校验密码
         {
                return new  Result(user);
         }
         else{
+            System.out.println(password);
                return new Result(100,"用户名或密码错误"); //错误代码100代表用户名或密码错误
 
         }
