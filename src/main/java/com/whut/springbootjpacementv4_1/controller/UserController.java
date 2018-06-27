@@ -6,7 +6,6 @@ import com.whut.springbootjpacementv4_1.service.UserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.whut.springbootjpacementv4_1.entity.User;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.*;
 
 @RestController

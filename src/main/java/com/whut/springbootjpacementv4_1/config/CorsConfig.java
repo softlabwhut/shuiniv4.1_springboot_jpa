@@ -8,8 +8,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 /**
  * 跨域访问更改权限
  *
- * @author jzwx
- * @version $Id: CorsConfig, v 0.1 2017-09-26 15:39 jzwx Exp $
+ * @author wd
+ * @version $Id: CorsConfig, v 0.1 2018-06-22 15:39 $
  */
 @Configuration
 public class CorsConfig extends WebMvcConfigurerAdapter {
