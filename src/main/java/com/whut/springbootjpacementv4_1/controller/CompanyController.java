@@ -7,7 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.sql.Date;
 import java.util.List;
-
+/**
+ * @program: springbootjpacementv4_1
+ * @description: 水泥厂的增删改查接口
+ * @author: WuDi
+ * @create: 2018-06-29 23:52
+ **/
 @RestController
 @RequestMapping(value = "/company")
 public class CompanyController

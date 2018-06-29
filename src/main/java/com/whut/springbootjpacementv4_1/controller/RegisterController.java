@@ -10,7 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+/**
+ * @program: springbootjpacementv4_1
+ * @description: 注册用户后台接口
+ * @author: WuDi
+ * @create: 2018-06-29 23:52
+ **/
 @RestController
 @RequestMapping(value = "/users")
 public class RegisterController {

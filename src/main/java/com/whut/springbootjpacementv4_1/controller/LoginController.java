@@ -12,7 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.Map;
-
+/**
+ * @program: springbootjpacementv4_1
+ * @description: 用户登录接口
+ * @author: WuDi
+ * @create: 2018-06-29 23:52
+ **/
 @RestController
 @CrossOrigin
 public class LoginController {
