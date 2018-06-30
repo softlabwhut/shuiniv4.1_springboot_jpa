@@ -5,7 +5,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/cement_v4.1
     username: root
-    password: 123456
+    password: root
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
@@ -23,6 +23,7 @@ spring:
 
     #配置监控控制拦截的fileters，去掉后监控界面sql无法统计，'wall'用于防火墙
     filters: stat,wall,log4j
+   # filters: stat,log4j
     maxPoolPreparedStatementsPerConnectionSize: 20
     useGlobalDataSourceStat: true
 
