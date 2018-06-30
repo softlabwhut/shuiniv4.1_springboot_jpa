@@ -5,7 +5,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.google.code.kaptcha.util.Config;
-
+/**
+ * @program: springbootjpacementv4_1
+ * @description: 验证码插件的配置文件
+ * @author: WuDi
+ * @create: 2018-06-29 23:52
+ **/
 @Component
 public class KaptchaConfig {
 

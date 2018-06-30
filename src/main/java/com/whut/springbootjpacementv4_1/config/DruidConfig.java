@@ -19,7 +19,12 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * @program: springbootjpacementv4_1
+ * @description: ali 连接池Druid配置
+ * @author: WuDi
+ * @create: 2018-06-29 23:52
+ **/
 @Component
 @Configuration
 public class DruidConfig {
@@ -122,7 +127,7 @@ public class DruidConfig {
          Map<String,String> initParams=new HashMap<>();
 
          initParams.put("loginUsername","admin");
-         initParams.put("loginPassword","123456");
+         initParams.put("loginPassword","admin123456");
          initParams.put("allow",""); //默认就是允许所有访问
          initParams.put("deny","192.168.5.21");
          bean.setInitParameters(initParams);

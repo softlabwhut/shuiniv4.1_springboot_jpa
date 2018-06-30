@@ -6,7 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import com.alibaba.fastjson.JSONObject;
-
+/**
+ * @program: springbootjpacementv4_1
+ * @description: 调查问卷表的接口
+ * @author: WuDi
+ * @create: 2018-06-29 23:52
+ **/
 
 @RestController
 @RequestMapping(value = "/questionnaires")
