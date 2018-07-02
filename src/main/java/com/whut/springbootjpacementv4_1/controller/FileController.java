@@ -2,10 +2,17 @@ package com.whut.springbootjpacementv4_1.controller;
 
 
 import com.whut.springbootjpacementv4_1.bean.FileUtil;
+import com.whut.springbootjpacementv4_1.bean.Result;
+import com.whut.springbootjpacementv4_1.service.FileService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 
@@ -18,17 +25,53 @@ import java.io.IOException;
 @RestController
 public class FileController {
 
+    @Autowired
+    FileService fileService;
+
+    private static final Logger logger = LoggerFactory.getLogger(FileController.class);
+
+    @Value("${file.store}")
+    String path;
+
+    //文件下载   String downLoadPath="/file?fileName="+fileName;
+     @RequestMapping(value = "/file")
+     @ResponseBody
+     public void downloadFile(String fileName, HttpServletResponse response,HttpServletRequest request){
+         Result result=new Result();
+         String filePath = request.getSession().getServletContext().getRealPath(path);
+         File f=new File(filePath,fileName);
+         if( !f.exists() || !f.isFile() )
+         {
+             System.out.println("下载文件不存在");
+             logger.info("log: 文件不存在");
+             result.setMsg("下载文件不存在");
+
+         }
+         logger.info("下载文件"+fileName);
+        if (fileService.downloadFile(f,response,request))
+        {
+            result.setStatus(1);
+        }
+        else
+            result.setMsg(" 下载文件失败");
+
+
+
+
+     }
+
 
 
     //处理文件上传
     @RequestMapping(value="/testuploadimg", method = RequestMethod.POST)
-    public @ResponseBody String uploadImg(@RequestParam("file") MultipartFile file,
+
+    public  String uploadImg(@RequestParam("file") MultipartFile file,
                                           HttpServletRequest request) {
         String contentType = file.getContentType();
         String fileName = file.getOriginalFilename();
         /*System.out.println("fileName-->" + fileName);
         System.out.println("getContentType-->" + contentType);*/
-        String filePath = request.getSession().getServletContext().getRealPath("fileupload/");
+        String filePath = request.getSession().getServletContext().getRealPath(path);
         try {
             FileUtil.uploadFile(file.getBytes(), filePath, fileName);
         } catch (Exception e) {

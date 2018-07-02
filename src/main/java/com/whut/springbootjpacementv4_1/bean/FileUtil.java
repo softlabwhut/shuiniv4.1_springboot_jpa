@@ -5,7 +5,15 @@ import java.io.FileOutputStream;
 
 public class FileUtil {
 
-    public static void uploadFile(byte[] file, String filePath, String fileName) throws Exception {
+    /**
+     *
+     * @param file
+     * @param filePath
+     * @param fileName
+     * @throws Exception
+     */
+
+    public static String uploadFile(byte[] file, String filePath, String fileName) throws Exception {
         File targetFile = new File(filePath);
         if(!targetFile.exists()){
             targetFile.mkdirs();
@@ -14,5 +22,7 @@ public class FileUtil {
         out.write(file);
         out.flush();
         out.close();
+        String downLoadPath="/file?fileName="+fileName;
+        return downLoadPath;
     }
 }

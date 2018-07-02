@@ -12,15 +12,15 @@ public class Case {
     private Integer id;
 
     //典型案例名
-    @Column(name = "c_name")
-    private String c_name;
+    @Column(name = "cname")
+    private String cname;
     //案例所属的分类
-    @Column(name = "c_category")
-    private Integer c_category;
+    @Column(name = "ccategory")
+    private Integer ccategory;
 
     //典型案例 文件下载地址
-    @Column(name = "c_fileSrc")
-    private String c_fileSrc;
+    @Column(name = "cfileSrc")
+    private String cfileSrc;
 
     public Case() {
 
@@ -34,27 +34,27 @@ public class Case {
         this.id = id;
     }
 
-    public String getC_name() {
-        return c_name;
+    public String getCname() {
+        return cname;
     }
 
-    public void setC_name(String c_name) {
-        this.c_name = c_name;
+    public void setCname(String cname) {
+        this.cname = cname;
     }
 
-    public Integer getC_category() {
-        return c_category;
+    public Integer getCcategory() {
+        return ccategory;
     }
 
-    public void setC_category(Integer c_category) {
-        this.c_category = c_category;
+    public void setCcategory(Integer ccategory) {
+        this.ccategory = ccategory;
     }
 
-    public String getC_fileSrc() {
-        return c_fileSrc;
+    public String getCfileSrc() {
+        return cfileSrc;
     }
 
-    public void setC_fileSrc(String c_fileSrc) {
-        this.c_fileSrc = c_fileSrc;
+    public void setCfileSrc(String cfileSrc) {
+        this.cfileSrc = cfileSrc;
     }
 }

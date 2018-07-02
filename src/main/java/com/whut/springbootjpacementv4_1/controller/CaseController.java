@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
 
 /**
  * @author chende
@@ -29,7 +28,7 @@ public class CaseController {
     @Autowired
     CaseService caseService;
 
-   // private static final Logger logger = LoggerFactory.getLogger(FileController.class);
+   private static final Logger logger = LoggerFactory.getLogger(CaseController.class);
 
     //典型案例上传
     @RequestMapping(value = "/addCase")
@@ -48,17 +47,19 @@ public class CaseController {
         System.out.println("getContentType-->" + contentType);*/
         String filePath = request.getSession().getServletContext().getRealPath("fileupload/");
         System.out.println(filePath);
+        String downloadpath = "";
         try {
-            FileUtil.uploadFile(file.getBytes(), filePath, fileName);
+            downloadpath = FileUtil.uploadFile(file.getBytes(), filePath, fileName);
+            logger.info(fileName+"文件上传成功");
         } catch (Exception e) {
-            // TODO: handle exception
-           result.setMsg("文件上传失败");
+
+            result.setMsg("文件上传失败");
             e.printStackTrace();
             return result;
 
         }
 
-        Case re = caseService.addCase(c_name, c_category, filePath+ File.separator+fileName);
+        Case re = caseService.addCase(c_name, c_category, downloadpath);
         result.setStatus(1);
         result.setObject(re);
 
@@ -70,12 +71,13 @@ public class CaseController {
     @RequestMapping(value = "/queryCase")
     @ResponseBody
     public Result queryCase(
-
+            String cname,
+            @RequestParam(name = "ccategory", required = false) Integer ccategory
 
     ) {
         Result result = new Result();
-
-
+        result.setStatus(1);
+        result.setObject(caseService.queryCase(cname, ccategory));
         return result;
     }
 

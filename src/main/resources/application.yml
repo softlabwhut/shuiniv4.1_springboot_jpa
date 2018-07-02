@@ -34,3 +34,6 @@ spring:
         physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
       #控制台显示sql
     show-sql: true
+
+file:
+    store: fileupload
