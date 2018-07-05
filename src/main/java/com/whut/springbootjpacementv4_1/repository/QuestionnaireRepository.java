@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository(value = "questionaireRepository")
 public interface QuestionnaireRepository extends JpaRepository<QuestionaireTemplate,Integer>,
-        JpaSpecificationExecutor<QuestionaireTemplate> {
+        JpaSpecificationExecutor<QuestionaireTemplate>
+{
 
 }

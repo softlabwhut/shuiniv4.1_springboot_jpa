@@ -6,9 +6,13 @@ import com.whut.springbootjpacementv4_1.service.UserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.whut.springbootjpacementv4_1.entity.User;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.*;
-
+/**
+ * @program: springbootjpacementv4_1
+ * @description: 用户的增删改查后台接口
+ * @author: WuDi
+ * @create: 2018-06-29 23:52
+ **/
 @RestController
 @RequestMapping(value = "/users")
 public class UserController {

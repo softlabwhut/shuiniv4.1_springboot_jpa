@@ -9,7 +9,12 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
-
+/**
+ * @program: springbootjpacementv4_1
+ * @description: spring security的基本配置文件
+ * @author: WuDi
+ * @create: 2018-06-29 23:52
+ **/
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = false)//允许进入页面方法前检验
