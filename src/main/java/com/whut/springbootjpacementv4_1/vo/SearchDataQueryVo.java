@@ -24,6 +24,7 @@ public class SearchDataQueryVo {
 
     //相关字段是否精确 或者模糊查询
     //默认是模糊查询 用int 不用bool
+    int author;
 
     int description;
 
@@ -77,16 +78,11 @@ public class SearchDataQueryVo {
         this.publishDate = publishDate;
     }
 
-    int author;
-
 
     //  定义大于 小于 等于等含义
     int permissionCode;
 
     int publishDate;
-
-
-
 
 
 }
