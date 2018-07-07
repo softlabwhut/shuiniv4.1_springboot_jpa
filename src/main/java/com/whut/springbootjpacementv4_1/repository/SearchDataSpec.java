@@ -17,6 +17,26 @@ public class SearchDataSpec {
 
             public Predicate toPredicate(Root<SearchData> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
                 Predicate p1 = null;
+
+/**
+ *  if(age!=0) {
+ *                     Predicate p2 = cb.equal(root.get(UserInfo_.age), age);
+ *                     if(p1 != null) {
+ *                         p1 = cb.and(p1,p2);
+ *                     } else {
+ *                         p1 = p2;
+ *                     }
+ *                 }
+ */
+
+//                if (searchData.getDescription() != null)
+//                // Path<String> descriptionPath;
+//
+//                {
+//                    return p1;
+//                }
+//            return p1;}
+
                 List<Predicate> list = new ArrayList<Predicate>();
 
                 int researchgroupnum = searchData.getResearchGroupNum();
