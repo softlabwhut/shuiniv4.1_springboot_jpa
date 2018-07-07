@@ -35,10 +35,11 @@ public class SearchDataController {
             @RequestParam(name = "description", required = false, defaultValue = "") String description,
             @RequestParam(name = "keyWord", required = false, defaultValue = "") String keyWord,
             @RequestParam(name = "author", required = false, defaultValue = "") String author,
-            //查询条件 是否精确查找
+            //查询条件 是否精确查找  默认0 表示 模糊查询   1表示精确查询
             @RequestParam(name = "authorCon", required = false, defaultValue = "0") int authorCon,
             @RequestParam(name = "descriptionCon", required = false, defaultValue = "0")int descriptionCon,
             @RequestParam(name = "keyWordCon", required = false, defaultValue = "0")int keyWordCon ,
+            //请求的 页数page 和 每页显示的数据个数 size
             @RequestParam(name = "page", required = false, defaultValue = "0")int page,
             @RequestParam(name = "size", required = false, defaultValue = "10")int size
 
