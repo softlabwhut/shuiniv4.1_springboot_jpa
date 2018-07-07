@@ -15,6 +15,13 @@ import java.io.IOException;
 public class FileService {
 
 
+    public String uploadFile(String filePath,String fileName){
+        String downloadpath = null;
+
+        return downloadpath;
+    }
+
+
     public boolean downloadFile(
      //       String fileName,
             File file,
