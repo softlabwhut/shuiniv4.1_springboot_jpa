@@ -24,12 +24,14 @@ public class SearchDataSpec {
  *                     }
  *                 }
  */
-             
-            if ( searchData.getDescription()!=null)
-                Path<String> descriptionPath;
 
-                return p1;
-            }
+                if (searchData.getDescription() != null)
+                // Path<String> descriptionPath;
+
+                {
+                    return p1;
+                }
+            return p1;}
         };
     }
 }

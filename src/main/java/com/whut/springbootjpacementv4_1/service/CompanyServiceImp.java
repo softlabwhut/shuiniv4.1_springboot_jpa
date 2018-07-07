@@ -5,7 +5,6 @@ import com.whut.springbootjpacementv4_1.entity.Company;
 import com.whut.springbootjpacementv4_1.repository.CompanyRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.Resource;
 import java.sql.Date;
 import java.util.List;
