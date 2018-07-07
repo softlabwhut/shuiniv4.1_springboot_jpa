@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 
 @RestController
 public class SearchDataController {
@@ -25,6 +26,65 @@ public class SearchDataController {
 
     @Autowired
     SearchDataService searchDataService;
+
+    //修改数据
+
+    /**
+     *  前端传值 所有的值都传
+     *
+     * @param id
+     * @param researchGroupNum
+     * @param rcategory
+     * @param description
+     * @param keyWord
+     * @param author
+     * @param permissionCode
+     * @param fileSrc
+     * @return
+     */
+    @RequestMapping(value = "/editData")
+    @ResponseBody
+    public Result editData(
+            @RequestParam(name = "id")Integer id,
+            int researchGroupNum,
+            int rcategory,
+            String description,
+            String keyWord,
+            String author,
+            @RequestParam(name = "permission", required = false, defaultValue = "1") int permissionCode,
+            @RequestParam(name = "fileSrc" ) String fileSrc
+
+    ){
+
+        SearchData searchData = new SearchData();
+        searchData.setId(id);
+        searchData.setResearchGroupNum(researchGroupNum);
+        searchData.setRcategory(rcategory);
+        searchData.setDescription(description);
+        searchData.setKeyWord(keyWord);
+        searchData.setFileSrc(fileSrc);
+        searchData.setAuthor(author);
+        searchData.setPermissionCode(permissionCode);
+        searchData.setPublishDate(new Date());
+        Result result=new Result(searchDataService.update(searchData));
+        return result;
+
+    }
+
+
+    //删除数据
+
+    @RequestMapping("/delData")
+    @ResponseBody
+    public Result delData(@RequestParam(name = "id")Integer id){
+
+        Result result=new Result();
+        searchDataService.delData(id);
+        result.setStatus(1);
+        return result;
+
+    }
+
 
     //查询数据
     @RequestMapping("/queryData")

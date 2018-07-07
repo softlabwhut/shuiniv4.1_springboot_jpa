@@ -17,6 +17,19 @@ public class SearchDataService {
     @Autowired
     SearchDataRepository searchDataRepository;
 
+    public SearchData  update(SearchData searchData){
+
+       return searchDataRepository.save(searchData);
+    }
+
+
+
+    //删
+    public void delData(Integer id){
+
+        searchDataRepository.deleteById(id);
+    }
+
 
     public SearchData addData(int researchGroupNum, int rcategory, String description,
                               String keyWord, String fileSrc, String author, int permissionCode) {

@@ -14,7 +14,7 @@ public class Result {
     public Result() {
         this.status = 0;
         this.code = 0;
-        this.msg = "未知错误";
+        this.msg = "";
     }
 
     public Result(int code, String msg) {
