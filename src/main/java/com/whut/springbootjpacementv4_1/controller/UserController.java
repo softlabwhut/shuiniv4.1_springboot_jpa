@@ -6,6 +6,8 @@ import com.whut.springbootjpacementv4_1.service.UserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.whut.springbootjpacementv4_1.entity.User;
 import org.springframework.web.bind.annotation.*;
+
+import javax.naming.Name;
 import java.util.*;
 /**
  * @program: springbootjpacementv4_1
@@ -43,11 +45,13 @@ public class UserController {
 
     //处理 /users/的post请求 用来创建用户
     @RequestMapping(value = "/add",method = RequestMethod.POST)
-    public Result addUser(
-                          @ModelAttribute User user,
-                          @RequestParam("username")String username,@RequestParam("email")String email,
-                          @RequestParam("password")String password,@RequestParam(value = "description",required = false)String description,
-                          @RequestParam("location")String location,@RequestParam("role") Integer role)
+    public Result addUser( @RequestBody User user
+//            @ModelAttribute User user,
+//            @RequestBody String username, @RequestBody String email,
+//            @RequestBody String password, @RequestBody String description,
+//            @RequestBody String location, @RequestBody Integer role
+//
+             )
     {
 
         //除了 @ModelAttribute 绑定参数外，还可以通过@RequestParam来传递页面参数
