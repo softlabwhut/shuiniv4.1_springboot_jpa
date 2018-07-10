@@ -3,6 +3,8 @@ package com.whut.springbootjpacementv4_1.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.whut.springbootjpacementv4_1.bean.Result;
 import com.whut.springbootjpacementv4_1.entity.QuestionaireTemplate;
+import com.whut.springbootjpacementv4_1.entity.QuestionnaireDiaoyan;
+import com.whut.springbootjpacementv4_1.service.QuestionnaireDiaoyanServiceImp;
 import com.whut.springbootjpacementv4_1.service.QuestionnaireTempServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,6 +25,9 @@ public class QuestionnaireController {
     @Autowired
     QuestionnaireTempServiceImp questionnaireTempServiceImp;
 
+    @Autowired
+    QuestionnaireDiaoyanServiceImp questionnaireDiaoyanServiceImp;
+
     @RequestMapping(value = "/all",method = RequestMethod.GET)
     public String getQuestionaireTempAll(){
        //todo
@@ -35,6 +40,12 @@ public class QuestionnaireController {
     public Result addQuest(@RequestBody QuestionaireTemplate questionaireTemplate)
     {
         return questionnaireTempServiceImp.add(questionaireTemplate);
+    }
+
+    @RequestMapping(value = "/diaoyan/add",method = RequestMethod.POST)
+    public Result addQuestDiaoyan(@RequestBody QuestionnaireDiaoyan questionnaireDiaoyan)
+    {
+        return questionnaireDiaoyanServiceImp.addQuest(questionnaireDiaoyan);
     }
 
 
