@@ -1,7 +1,11 @@
 package com.whut.springbootjpacementv4_1.controller;
 
+import com.alibaba.fastjson.JSONObject;
+import com.whut.springbootjpacementv4_1.bean.Result;
+import com.whut.springbootjpacementv4_1.entity.QuestionaireTemplate;
 import com.whut.springbootjpacementv4_1.service.QuestionnaireTempServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,9 +26,15 @@ public class QuestionnaireController {
     @RequestMapping(value = "/all",method = RequestMethod.GET)
     public String getQuestionaireTempAll(){
        //todo
-     //   return JSONObject.toJSONString(questionnaireTempServiceImp.getAll());
 
-        return null;
+      return JSONObject.toJSONString(questionnaireTempServiceImp.getAll());
+
+
+    }
+    @RequestMapping(value = "/add",method = RequestMethod.POST)
+    public Result addQuest(@RequestBody QuestionaireTemplate questionaireTemplate)
+    {
+        return questionnaireTempServiceImp.add(questionaireTemplate);
     }
 
 
