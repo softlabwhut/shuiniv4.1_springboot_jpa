@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
+import java.net.URLEncoder;
 
 /**
  * @program: springbootjpacementv4_1
@@ -36,10 +37,13 @@ public class FileController {
     //文件下载   String downLoadPath="/file?fileName="+fileName;
      @RequestMapping(value = "/file")
      @ResponseBody
-     public void downloadFile(String fileName, HttpServletResponse response,HttpServletRequest request){
+     public void downloadFile(String fileName, HttpServletResponse response,HttpServletRequest request)throws Exception{
          Result result=new Result();
-         String filePath = request.getSession().getServletContext().getRealPath(path);
-         File f=new File(filePath,fileName);
+      //   String filePath = request.getSession().getServletContext().getRealPath(path);
+       //  fileName= URLEncoder.encode(fileName,"UTF-8");
+         fileName= URLEncoder.encode(fileName, "UTF-8");
+
+         File f=new File(path,fileName);
          if( !f.exists() || !f.isFile() )
          {
              System.out.println("下载文件不存在");
@@ -71,7 +75,7 @@ public class FileController {
         String fileName = file.getOriginalFilename();
         /*System.out.println("fileName-->" + fileName);
         System.out.println("getContentType-->" + contentType);*/
-        String filePath = request.getSession().getServletContext().getRealPath(path);
+        String filePath = path;
         try {
             FileUtil.uploadFile(file.getBytes(), filePath, fileName);
         } catch (Exception e) {

@@ -2,6 +2,7 @@ package com.whut.springbootjpacementv4_1.bean;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.net.URLEncoder;
 
 public class FileUtil {
 
@@ -18,7 +19,9 @@ public class FileUtil {
         if(!targetFile.exists()){
             targetFile.mkdirs();
         }
-        FileOutputStream out = new FileOutputStream(filePath+fileName);
+        fileName= URLEncoder.encode(fileName, "UTF-8");
+        File f=new File(filePath,fileName);
+        FileOutputStream out = new FileOutputStream(f);
         out.write(file);
         out.flush();
         out.close();

@@ -8,6 +8,7 @@ import com.whut.springbootjpacementv4_1.service.CaseService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -24,6 +25,9 @@ import javax.servlet.http.HttpServletRequest;
 // 案例的增删改查
 @RestController
 public class CaseController {
+
+    @Value("${file.store}")
+    String path;
 
     @Autowired
     CaseService caseService;
@@ -45,7 +49,8 @@ public class CaseController {
         String fileName = file.getOriginalFilename();
         /*System.out.println("fileName-->" + fileName);
         System.out.println("getContentType-->" + contentType);*/
-        String filePath = request.getSession().getServletContext().getRealPath("fileupload/");
+        String filePath = path;
+                //request.getSession().getServletContext().getRealPath("fileupload/");
         System.out.println(filePath);
         String downloadpath = "";
         try {

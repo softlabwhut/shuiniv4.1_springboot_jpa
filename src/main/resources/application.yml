@@ -36,4 +36,4 @@ spring:
     show-sql: true
 
 file:
-    store: fileupload
+    store: /Users/chende/Desktop/fileupload
