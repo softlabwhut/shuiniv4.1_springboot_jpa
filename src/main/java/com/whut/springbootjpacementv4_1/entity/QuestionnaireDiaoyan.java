@@ -12,6 +12,17 @@ public class QuestionnaireDiaoyan {
     @Column(name = "id")
     private Integer id;
 
+    public String getComp_name() {
+        return comp_name;
+    }
+
+    public void setComp_name(String comp_name) {
+        this.comp_name = comp_name;
+    }
+
+    @Column(name = "comp_name")
+    private String comp_name;
+
     @Column(name = "author")
     private String author;
 
