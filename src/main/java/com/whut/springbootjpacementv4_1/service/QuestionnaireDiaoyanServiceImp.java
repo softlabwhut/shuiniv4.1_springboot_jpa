@@ -4,6 +4,9 @@ import com.whut.springbootjpacementv4_1.bean.Result;
 import com.whut.springbootjpacementv4_1.entity.QuestionnaireDiaoyan;
 import com.whut.springbootjpacementv4_1.repository.QuestionnaireDiaoyanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 /**
@@ -27,4 +30,11 @@ public class QuestionnaireDiaoyanServiceImp implements QuestionnaireDiaoyanServi
         else
              return new Result(401,"未知错误，创建失败！");
     }
+
+    // 多条件查询
+    public Page<QuestionnaireDiaoyan> query(QuestionnaireDiaoyan questionnaireDiaoyan, int page, int size){
+        Example<QuestionnaireDiaoyan> ex=Example.of(questionnaireDiaoyan);
+        return  questionnaireDiaoyanRepository.findAll(ex,new PageRequest(page, size));
+    }
+
 }
