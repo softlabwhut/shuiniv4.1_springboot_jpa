@@ -41,7 +41,7 @@ public class QuestionnaireController {
     }
 
     @RequestMapping(value = "/diaoyan/add", method = RequestMethod.POST)
-    public Result addQuestDiaoyan( QuestionnaireDiaoyan questionnaireDiaoyan) {
+    public Result addQuestDiaoyan( @RequestBody QuestionnaireDiaoyan questionnaireDiaoyan) {
         return questionnaireDiaoyanServiceImp.addQuest(questionnaireDiaoyan);
     }
 
@@ -53,7 +53,7 @@ public class QuestionnaireController {
      * @return
      */
     @RequestMapping(value = "/diaoyan/query")
-    public Result queryQuestDiaoyan(@RequestBody QuestionnaireDiaoyan questionnaireDiaoyan,
+    public Result queryQuestDiaoyan( QuestionnaireDiaoyan questionnaireDiaoyan,
                                     @RequestParam(name = "page", required = false, defaultValue = "0") int page,
                                     @RequestParam(name = "size", required = false, defaultValue = "10") int size) {
 
