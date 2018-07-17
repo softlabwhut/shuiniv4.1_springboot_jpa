@@ -1,179 +1,318 @@
 package com.whut.springbootjpacementv4_1.entity;
 
+import javax.persistence.*;
+import java.sql.Timestamp;
+
+@Entity
+@Table(name = "questionnaire_diaoyan")
 public class QuestionnaireDiaoyan {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
 
+    public String getComp_name() {
+        return comp_name;
+    }
+
+    public void setComp_name(String comp_name) {
+        this.comp_name = comp_name;
+    }
+
+    @Column(name = "comp_name")
+    private String comp_name;
+
+    @Column(name = "author")
     private String author;
 
-    private String lineName;
+    @Column(name = "line_name")
+    private String line_name;
 
-    private String lineSize;
+    @Column(name = "line_size")
+    private String line_size;
 
-    private Integer yearRunDays;
+    @Column(name = "year_run_days ")
+    private Integer year_run_days;
 
-    private String compAddress;
+    @Column(name = "comp_address ")
+    private String comp_address;
 
-    private String phoneNum;
+    @Column(name = " phone_num")
+    private String phone_num;
 
-    private String zyxhSlscYl1Name;
+    @Column(name = "zyxh_slsc_yl1_name ")
+    private String zyxh_slsc_yl1_name;
 
-    private Double zyxhSlscYl1Xiaohao;
+    @Column(name = "zyxh_slsc_yl1_xiaohao")
+    private Double zyxh_slsc_yl1_xiaohao;
 
-    private String zyxhSlscYl2Name;
+    @Column(name = "zyxh_slsc_yl2_name")
+    private String zyxh_slsc_yl2_name;
 
-    private Double zyxhSlscYl2Xiaohao;
+    @Column(name="zyxh_slsc_yl2_xiaohao")
+    private Double zyxh_slsc_yl2_xiaohao;
 
-    private String zyxhSlscYl3Name;
+    @Column(name = "zyxh_slsc_yl3_name")
+    private String zyxh_slsc_yl3_name;
 
-    private Double zyxhSlscYl3Xiaohao;
+    @Column(name = "zyxh_slsc_yl3_xiaohao")
+    private Double zyxh_slsc_yl3_xiaohao;
 
-    private String zyxhSlscYl4Name;
+    @Column(name = "zyxh_slsc_yl4_name")
+    private String zyxh_slsc_yl4_name;
 
-    private Double zyxhSlscYl4Xiaohao;
+    @Column(name = "zyxh_slsc_yl4_xiaohao")
+    private Double zyxh_slsc_yl4_xiaohao;
 
-    private String zyxhSlscYl5Name;
+    @Column(name = "zyxh_slsc_yl5_name")
+    private String zyxh_slsc_yl5_name;
 
-    private Double zyxhSlscYl5Xiaohao;
+    @Column(name = "zyxh_slsc_yl5_xiaohao")
+    private Double zyxh_slsc_yl5_xiaohao;
 
-    private String zyxhSlscYl6Name;
+    @Column(name = "zyxh_slsc_yl6_name")
+    private String zyxh_slsc_yl6_name;
 
-    private Double zyxhSlscYl6Xiaohao;
+    @Column(name = "zyxh_slsc_yl6_xiaohao")
+    private Double zyxh_slsc_yl6_xiaohao;
 
-    private String zyxhRlRl1Name;
+    @Column(name = "zyxh_rl_rl1_name")
+    private String zyxh_rl_rl1_name;
 
-    private Double zyxhRlRl1Xiaohao;
+    @Column(name = "zyxh_rl_rl1_xiaohao")
+    private Double zyxh_rl_rl1_xiaohao;
 
-    private String zyxhRlRl2Name;
+    @Column(name = "zyxh_rl_rl2_name")
+    private String zyxh_rl_rl2_name;
 
-    private Double zyxhRlRl2Xiaohao;
+    @Column(name = "zyxh_rl_rl2_xiaohao")
+    private Double zyxh_rl_rl2_xiaohao;
 
-    private String zyxhRlRl3Name;
+    @Column(name = "zyxh_rl_rl3_name")
+    private String zyxh_rl_rl3_name;
 
-    private Double zyxhRlRl3Xiaohao;
+    @Column(name = "zyxh_rl_rl3_xiaohao")
+    private Double zyxh_rl_rl3_xiaohao;
 
-    private Double zyxhShuliaocl;
+    @Column(name = "zyxh_shuliaocl")
+    private Double zyxh_shuliaocl;
 
-    private String zyxhSlzcylcYl1Name;
+    @Column(name = "zyxh_slzcylc_yl1_name")
+    private String zyxh_slzcylc_yl1_name;
 
-    private Double zyxhSlzcylcYl1Xiaohao;
+    @Column(name = "zyxh_slzcylc_yl1_xiaohao")
+    private Double zyxh_slzcylc_yl1_xiaohao;
 
-    private String zyxhSlzcylcYl2Name;
+    @Column(name = "zyxh_slzcylc_yl2_name")
+    private String zyxh_slzcylc_yl2_name;
 
-    private Double zyxhSlzcylcYl2Xiaohao;
+    @Column(name = "zyxh_slzcylc_yl2_xiaohao")
+    private Double zyxh_slzcylc_yl2_xiaohao;
 
-    private String zyxhSlzcylcYl3Name;
+    @Column(name = "zyxh_slzcylc_yl3_name")
+    private String zyxh_slzcylc_yl3_name;
 
-    private Double zyxhSlzcylcYl3Xiaohao;
+    @Column(name = "zyxh_slzcylc_yl3_xiaohao")
+    private Double zyxh_slzcylc_yl3_xiaohao;
 
-    private String zyxhSlzcylcYl4Name;
+    @Column(name = "zyxh_slzcylc_yl4_name")
+    private String zyxh_slzcylc_yl4_name;
 
-    private Double zyxhSlzcylcYl4Xiaohao;
+    @Column(name = "zyxh_slzcylc_yl4_xiaohao")
+    private Double zyxh_slzcylc_yl4_xiaohao;
 
-    private String zyxhSlzcylcYl5Name;
+    @Column(name = "zyxh_slzcylc_yl5_name")
+    private String zyxh_slzcylc_yl5_name;
 
-    private Double zyxhSlzcylcYl5Xiaohao;
+    @Column(name = "zyxh_slzcylc_yl5_xiaohao")
+    private Double zyxh_slzcylc_yl5_xiaohao;
 
-    private String zyxhSlzcylcYl6Name;
+    @Column(name = "zyxh_slzcylc_yl6_name")
+    private String zyxh_slzcylc_yl6_name;
 
-    private Double zyxhSlzcylcYl6Xiaohao;
+    @Column(name = "zyxh_slzcylc_yl6_xiaohao")
+    private Double zyxh_slzcylc_yl6_xiaohao;
 
-    private String zyxhSlzcylcYl7Name;
+    @Column(name = "zyxh_slzcylc_yl7_name")
+    private String zyxh_slzcylc_yl7_name;
 
-    private Double zyxhSlzcylcYl7Xiaohao;
+    @Column(name = "zyxh_slzcylc_yl7_xiaohao")
+    private Double zyxh_slzcylc_yl7_xiaohao;
 
-    private String zyxhSlzcylcYl8Name;
+    @Column(name = "zyxh_slzcylc_yl8_name")
+    private String zyxh_slzcylc_yl8_name;
 
-    private Double zyxhSlzcylcYl8Xiaohao;
+    @Column(name = "zyxh_slzcylc_yl8_xiaohao")
+    private Double zyxh_slzcylc_yl8_xiaohao;
 
-    private String zyxhSlzcylcYl9Name;
+    @Column(name = "zyxh_slzcylc_yl9_name")
+    private String zyxh_slzcylc_yl9_name;
 
-    private Double zyxhSlzcylcYl9Xiaohao;
+    @Column(name = "zyxh_slzcylc_yl9_xiaohao")
+    private Double zyxh_slzcylc_yl9_xiaohao;
 
-    private Double zyxhShuinicl;
+    @Column(name = "zyxh_shuinicl")
+    private Double zyxh_shuinicl;
 
-    private Double nyxhShengliaoDianhao;
+    @Column(name = "nyxh_shengliao_dianhao")
+    private Double nyxh_shengliao_dianhao;
 
-    private Double nyxhShuliaoMeihao;
+    @Column(name = "nyxh_shuliao_meihao")
+    private Double nyxh_shuliao_meihao;
 
-    private Double nyxhShuliaoDianhao;
+    @Column(name = "nyxh_shuliao_dianhao")
+    private Double nyxh_shuliao_dianhao;
 
-    private Double nyxhShuliaoNenghao;
+    @Column(name = "nyxh_shuliao_nenghao")
+    private Double nyxh_shuliao_nenghao;
 
-    private Double nyxhShuiniDianhao;
+    @Column(name = "nyxh_shuini_dianhao")
+    private Double nyxh_shuini_dianhao;
 
-    private Double nyxhShuiniNenghao;
+    @Column(name = "nyxh_shuini_nenghao")
+    private Double nyxh_shuini_nenghao;
 
-    private Double nyxhShuliaoFadian;
+    @Column(name = "nyxh_shuliao_fadian")
+    private Double nyxh_shuliao_fadian;
 
-    private Double fqpfKeliwuYtPaifang;
+    @Column(name = "fqpf_keliwu_yt_paifang")
+    private Double fqpf_keliwu_yt_paifang;
 
-    private Double fqpfKeliwuYtPfnongdu;
+    @Column(name = "fqpf_keliwu_yt_pfnongdu")
+    private Double fqpf_keliwu_yt_pfnongdu;
 
-    private String fqpfKeliwuYtChuchen;
+    @Column(name = "fqpf_keliwu_yt_chuchen")
+    private String fqpf_keliwu_yt_chuchen;
 
-    private Double fqpfKeliwuYwPaifang;
+    @Column(name = "fqpf_keliwu_yw_paifang")
+    private Double fqpf_keliwu_yw_paifang;
 
-    private Double fqpfKeliwuYwPfnongdu;
+    @Column(name = "fqpf_keliwu_yw_pfnongdu")
+    private Double fqpf_keliwu_yw_pfnongdu;
 
-    private String fqpfKeliwuYwChuchen;
+    @Column(name = "fqpf_keliwu_yw_chuchen")
+    private String fqpf_keliwu_yw_chuchen;
 
-    private Double fqpfKeliwuSnmPaifang;
+    @Column(name = "fqpf_keliwu_snm_paifang")
+    private Double fqpf_keliwu_snm_paifang;
 
-    private Double fqpfKeliwuSnmNongdu;
+    @Column(name = "fqpf_keliwu_snm_nongdu")
+    private Double fqpf_keliwu_snm_nongdu;
 
-    private String fqpfKeliwuSnmChuchen;
+    @Column(name = "fqpf_keliwu_snm_chuchen")
+    private String fqpf_keliwu_snm_chuchen;
 
-    private Double fqpfKeliwuMmPaifang;
+    @Column(name = "fqpf_keliwu_mm_paifang")
+    private Double fqpf_keliwu_mm_paifang;
 
-    private Double fqpfKeliwuMmNongdu;
+    @Column(name = "fqpf_keliwu_mm_nongdu")
+    private Double fqpf_keliwu_mm_nongdu;
 
-    private String fqpfKeliwuMmChuchen;
+    @Column(name = "fqpf_keliwu_mm_chuchen")
+    private String fqpf_keliwu_mm_chuchen;
 
-    private Double fqpfKeliwuBzjPaifang;
+    @Column(name = "fqpf_keliwu_bzj_paifang")
+    private Double fqpf_keliwu_bzj_paifang;
 
-    private Double fqpfKeliwuBzjNongdu;
+    @Column(name = "fqpf_keliwu_bzj_nongdu")
+    private Double fqpf_keliwu_bzj_nongdu;
 
-    private String fqpfKeliwuBzjChuchen;
+    @Column(name = "fqpf_keliwu_bzj_chuchen")
+    private String fqpf_keliwu_bzj_chuchen;
 
-    private Double fqpfSo2YwPaifang;
+    @Column(name = "fqpf_SO2_yw_paifang")
+    private Double fqpf_SO2_yw_paifang;
 
-    private Double fqpfSo2YwNongdu;
+    @Column(name = "fqpf_SO2_yw_nongdu")
+    private Double fqpf_SO2_yw_nongdu;
 
-    private String fqpfSo2YwChuchen;
+    @Column(name = "fqpf_SO2_yw_chuchen")
+    private String fqpf_SO2_yw_chuchen;
 
-    private Double fqpfNoxYwPaifang;
+    @Column(name = "fqpf_NOX_yw_paifang")
+    private Double fqpf_NOX_yw_paifang;
 
-    private Double fqpfNoxYwNongdu;
+    @Column(name = "fqpf_NOX_yw_nongdu")
+    private Double fqpf_NOX_yw_nongdu;
 
-    private String fqpfNoxYwChuchen;
+    @Column(name = "fqpf_NOX_yw_chuchen")
+    private String fqpf_NOX_yw_chuchen;
 
-    private Double fqpfPaShuliaoPaifang;
+    @Column(name = "fqpf_pa_shuliao_paifang")
+    private Double fqpf_pa_shuliao_paifang;
 
-    private Double fqpfPaShuliaoNongdu;
+    @Column(name = "fqpf_pa_shuliao_nongdu")
+    private Double fqpf_pa_shuliao_nongdu;
 
-    private String fqpfPaShuliaoChuchen;
+    @Column(name = "fqpf_pa_shuliao_chuchen")
+    private String fqpf_pa_shuliao_chuchen;
 
-    private Byte fqpfTxgySncr;
+    @Column(name = "fqpf_txgy_SNCR")
+    private Byte fqpf_txgy_SNCR;
 
-    private Byte fqpfTxgyFjrs;
+    @Column(name = "fqpf_txgy_fjrs")
+    private Byte fqpf_txgy_fjrs;
 
-    private Byte fqpfOneplustwo;
+    @Column(name = "fqpf_oneplustwo")
+    private Byte fqpf_oneplustwo;
 
-    private Byte fqpfTxgyQita;
+    @Column(name = "fqpf_txgy_qita")
+    private Byte fqpf_txgy_qita;
 
-    private String zysbShengliaoFenmoQingkuang;
+    @Column(name = "zysb_shengliao_fenmo_qingkuang")
+    private String zysb_shengliao_fenmo_qingkuang;
 
-    private String zysbShengliaoXinghao;
+    @Column(name = "zysb_shengliao_xinghao")
+    private String zysb_shengliao_xinghao;
 
-    private String zysbShengliaoShuliang;
+    @Column(name = "zysb_shengliao_shuliang")
+    private String zysb_shengliao_shuliang;
 
-    private String zysbYaoGuige;
+    @Column(name = "zysb_yao_guige")
+    private String zysb_yao_guige;
 
-    private String zysbShuinimoFenmo;
+    @Column(name = "zysb_shuinimo_fenmo")
+    private String zysb_shuinimo_fenmo;
 
-    private String zysbShuinimoGuige;
+    @Column(name = "zysb_shuinimo_guige")
+    private String zysb_shuinimo_guige;
 
-    private String zysbShuinimoShuliang;
+    @Column(name = "zysb_shuinimo_shuliang")
+    private String zysb_shuinimo_shuliang;
+
+    @Column(name = "created_at")
+    private Timestamp created_at;
+
+    @Column(name = "updated_at")
+    private Timestamp updated_at;
+
+    @Column(name = "auditor")
+    private String auditor;
+
+    public Timestamp getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(Timestamp created_at) {
+        this.created_at = created_at;
+    }
+
+    public Timestamp getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(Timestamp updated_at) {
+        this.updated_at = updated_at;
+    }
+
+    public String getAuditor() {
+        return auditor;
+    }
+
+    public void setAuditor(String auditor) {
+        this.auditor = auditor;
+    }
 
     public Integer getId() {
         return id;
@@ -188,686 +327,686 @@ public class QuestionnaireDiaoyan {
     }
 
     public void setAuthor(String author) {
-        this.author = author == null ? null : author.trim();
+        this.author = author;
     }
 
-    public String getLineName() {
-        return lineName;
+    public String getLine_name() {
+        return line_name;
     }
 
-    public void setLineName(String lineName) {
-        this.lineName = lineName == null ? null : lineName.trim();
+    public void setLine_name(String line_name) {
+        this.line_name = line_name;
     }
 
-    public String getLineSize() {
-        return lineSize;
+    public String getLine_size() {
+        return line_size;
     }
 
-    public void setLineSize(String lineSize) {
-        this.lineSize = lineSize == null ? null : lineSize.trim();
+    public void setLine_size(String line_size) {
+        this.line_size = line_size;
     }
 
-    public Integer getYearRunDays() {
-        return yearRunDays;
+    public Integer getYear_run_days() {
+        return year_run_days;
     }
 
-    public void setYearRunDays(Integer yearRunDays) {
-        this.yearRunDays = yearRunDays;
+    public void setYear_run_days(Integer year_run_days) {
+        this.year_run_days = year_run_days;
     }
 
-    public String getCompAddress() {
-        return compAddress;
+    public String getComp_address() {
+        return comp_address;
     }
 
-    public void setCompAddress(String compAddress) {
-        this.compAddress = compAddress == null ? null : compAddress.trim();
+    public void setComp_address(String comp_address) {
+        this.comp_address = comp_address;
     }
 
-    public String getPhoneNum() {
-        return phoneNum;
+    public String getPhone_num() {
+        return phone_num;
     }
 
-    public void setPhoneNum(String phoneNum) {
-        this.phoneNum = phoneNum == null ? null : phoneNum.trim();
+    public void setPhone_num(String phone_num) {
+        this.phone_num = phone_num;
     }
 
-    public String getZyxhSlscYl1Name() {
-        return zyxhSlscYl1Name;
+    public String getZyxh_slsc_yl1_name() {
+        return zyxh_slsc_yl1_name;
     }
 
-    public void setZyxhSlscYl1Name(String zyxhSlscYl1Name) {
-        this.zyxhSlscYl1Name = zyxhSlscYl1Name == null ? null : zyxhSlscYl1Name.trim();
+    public void setZyxh_slsc_yl1_name(String zyxh_slsc_yl1_name) {
+        this.zyxh_slsc_yl1_name = zyxh_slsc_yl1_name;
     }
 
-    public Double getZyxhSlscYl1Xiaohao() {
-        return zyxhSlscYl1Xiaohao;
+    public Double getZyxh_slsc_yl1_xiaohao() {
+        return zyxh_slsc_yl1_xiaohao;
     }
 
-    public void setZyxhSlscYl1Xiaohao(Double zyxhSlscYl1Xiaohao) {
-        this.zyxhSlscYl1Xiaohao = zyxhSlscYl1Xiaohao;
+    public void setZyxh_slsc_yl1_xiaohao(Double zyxh_slsc_yl1_xiaohao) {
+        this.zyxh_slsc_yl1_xiaohao = zyxh_slsc_yl1_xiaohao;
     }
 
-    public String getZyxhSlscYl2Name() {
-        return zyxhSlscYl2Name;
+    public String getZyxh_slsc_yl2_name() {
+        return zyxh_slsc_yl2_name;
     }
 
-    public void setZyxhSlscYl2Name(String zyxhSlscYl2Name) {
-        this.zyxhSlscYl2Name = zyxhSlscYl2Name == null ? null : zyxhSlscYl2Name.trim();
+    public void setZyxh_slsc_yl2_name(String zyxh_slsc_yl2_name) {
+        this.zyxh_slsc_yl2_name = zyxh_slsc_yl2_name;
     }
 
-    public Double getZyxhSlscYl2Xiaohao() {
-        return zyxhSlscYl2Xiaohao;
+    public Double getZyxh_slsc_yl2_xiaohao() {
+        return zyxh_slsc_yl2_xiaohao;
     }
 
-    public void setZyxhSlscYl2Xiaohao(Double zyxhSlscYl2Xiaohao) {
-        this.zyxhSlscYl2Xiaohao = zyxhSlscYl2Xiaohao;
+    public void setZyxh_slsc_yl2_xiaohao(Double zyxh_slsc_yl2_xiaohao) {
+        this.zyxh_slsc_yl2_xiaohao = zyxh_slsc_yl2_xiaohao;
     }
 
-    public String getZyxhSlscYl3Name() {
-        return zyxhSlscYl3Name;
+    public String getZyxh_slsc_yl3_name() {
+        return zyxh_slsc_yl3_name;
     }
 
-    public void setZyxhSlscYl3Name(String zyxhSlscYl3Name) {
-        this.zyxhSlscYl3Name = zyxhSlscYl3Name == null ? null : zyxhSlscYl3Name.trim();
+    public void setZyxh_slsc_yl3_name(String zyxh_slsc_yl3_name) {
+        this.zyxh_slsc_yl3_name = zyxh_slsc_yl3_name;
     }
 
-    public Double getZyxhSlscYl3Xiaohao() {
-        return zyxhSlscYl3Xiaohao;
+    public Double getZyxh_slsc_yl3_xiaohao() {
+        return zyxh_slsc_yl3_xiaohao;
     }
 
-    public void setZyxhSlscYl3Xiaohao(Double zyxhSlscYl3Xiaohao) {
-        this.zyxhSlscYl3Xiaohao = zyxhSlscYl3Xiaohao;
+    public void setZyxh_slsc_yl3_xiaohao(Double zyxh_slsc_yl3_xiaohao) {
+        this.zyxh_slsc_yl3_xiaohao = zyxh_slsc_yl3_xiaohao;
     }
 
-    public String getZyxhSlscYl4Name() {
-        return zyxhSlscYl4Name;
+    public String getZyxh_slsc_yl4_name() {
+        return zyxh_slsc_yl4_name;
     }
 
-    public void setZyxhSlscYl4Name(String zyxhSlscYl4Name) {
-        this.zyxhSlscYl4Name = zyxhSlscYl4Name == null ? null : zyxhSlscYl4Name.trim();
+    public void setZyxh_slsc_yl4_name(String zyxh_slsc_yl4_name) {
+        this.zyxh_slsc_yl4_name = zyxh_slsc_yl4_name;
     }
 
-    public Double getZyxhSlscYl4Xiaohao() {
-        return zyxhSlscYl4Xiaohao;
+    public Double getZyxh_slsc_yl4_xiaohao() {
+        return zyxh_slsc_yl4_xiaohao;
     }
 
-    public void setZyxhSlscYl4Xiaohao(Double zyxhSlscYl4Xiaohao) {
-        this.zyxhSlscYl4Xiaohao = zyxhSlscYl4Xiaohao;
+    public void setZyxh_slsc_yl4_xiaohao(Double zyxh_slsc_yl4_xiaohao) {
+        this.zyxh_slsc_yl4_xiaohao = zyxh_slsc_yl4_xiaohao;
     }
 
-    public String getZyxhSlscYl5Name() {
-        return zyxhSlscYl5Name;
+    public String getZyxh_slsc_yl5_name() {
+        return zyxh_slsc_yl5_name;
     }
 
-    public void setZyxhSlscYl5Name(String zyxhSlscYl5Name) {
-        this.zyxhSlscYl5Name = zyxhSlscYl5Name == null ? null : zyxhSlscYl5Name.trim();
+    public void setZyxh_slsc_yl5_name(String zyxh_slsc_yl5_name) {
+        this.zyxh_slsc_yl5_name = zyxh_slsc_yl5_name;
     }
 
-    public Double getZyxhSlscYl5Xiaohao() {
-        return zyxhSlscYl5Xiaohao;
+    public Double getZyxh_slsc_yl5_xiaohao() {
+        return zyxh_slsc_yl5_xiaohao;
     }
 
-    public void setZyxhSlscYl5Xiaohao(Double zyxhSlscYl5Xiaohao) {
-        this.zyxhSlscYl5Xiaohao = zyxhSlscYl5Xiaohao;
+    public void setZyxh_slsc_yl5_xiaohao(Double zyxh_slsc_yl5_xiaohao) {
+        this.zyxh_slsc_yl5_xiaohao = zyxh_slsc_yl5_xiaohao;
     }
 
-    public String getZyxhSlscYl6Name() {
-        return zyxhSlscYl6Name;
+    public String getZyxh_slsc_yl6_name() {
+        return zyxh_slsc_yl6_name;
     }
 
-    public void setZyxhSlscYl6Name(String zyxhSlscYl6Name) {
-        this.zyxhSlscYl6Name = zyxhSlscYl6Name == null ? null : zyxhSlscYl6Name.trim();
+    public void setZyxh_slsc_yl6_name(String zyxh_slsc_yl6_name) {
+        this.zyxh_slsc_yl6_name = zyxh_slsc_yl6_name;
     }
 
-    public Double getZyxhSlscYl6Xiaohao() {
-        return zyxhSlscYl6Xiaohao;
+    public Double getZyxh_slsc_yl6_xiaohao() {
+        return zyxh_slsc_yl6_xiaohao;
     }
 
-    public void setZyxhSlscYl6Xiaohao(Double zyxhSlscYl6Xiaohao) {
-        this.zyxhSlscYl6Xiaohao = zyxhSlscYl6Xiaohao;
+    public void setZyxh_slsc_yl6_xiaohao(Double zyxh_slsc_yl6_xiaohao) {
+        this.zyxh_slsc_yl6_xiaohao = zyxh_slsc_yl6_xiaohao;
     }
 
-    public String getZyxhRlRl1Name() {
-        return zyxhRlRl1Name;
+    public String getZyxh_rl_rl1_name() {
+        return zyxh_rl_rl1_name;
     }
 
-    public void setZyxhRlRl1Name(String zyxhRlRl1Name) {
-        this.zyxhRlRl1Name = zyxhRlRl1Name == null ? null : zyxhRlRl1Name.trim();
+    public void setZyxh_rl_rl1_name(String zyxh_rl_rl1_name) {
+        this.zyxh_rl_rl1_name = zyxh_rl_rl1_name;
     }
 
-    public Double getZyxhRlRl1Xiaohao() {
-        return zyxhRlRl1Xiaohao;
+    public Double getZyxh_rl_rl1_xiaohao() {
+        return zyxh_rl_rl1_xiaohao;
     }
 
-    public void setZyxhRlRl1Xiaohao(Double zyxhRlRl1Xiaohao) {
-        this.zyxhRlRl1Xiaohao = zyxhRlRl1Xiaohao;
+    public void setZyxh_rl_rl1_xiaohao(Double zyxh_rl_rl1_xiaohao) {
+        this.zyxh_rl_rl1_xiaohao = zyxh_rl_rl1_xiaohao;
     }
 
-    public String getZyxhRlRl2Name() {
-        return zyxhRlRl2Name;
+    public String getZyxh_rl_rl2_name() {
+        return zyxh_rl_rl2_name;
     }
 
-    public void setZyxhRlRl2Name(String zyxhRlRl2Name) {
-        this.zyxhRlRl2Name = zyxhRlRl2Name == null ? null : zyxhRlRl2Name.trim();
+    public void setZyxh_rl_rl2_name(String zyxh_rl_rl2_name) {
+        this.zyxh_rl_rl2_name = zyxh_rl_rl2_name;
     }
 
-    public Double getZyxhRlRl2Xiaohao() {
-        return zyxhRlRl2Xiaohao;
+    public Double getZyxh_rl_rl2_xiaohao() {
+        return zyxh_rl_rl2_xiaohao;
     }
 
-    public void setZyxhRlRl2Xiaohao(Double zyxhRlRl2Xiaohao) {
-        this.zyxhRlRl2Xiaohao = zyxhRlRl2Xiaohao;
+    public void setZyxh_rl_rl2_xiaohao(Double zyxh_rl_rl2_xiaohao) {
+        this.zyxh_rl_rl2_xiaohao = zyxh_rl_rl2_xiaohao;
     }
 
-    public String getZyxhRlRl3Name() {
-        return zyxhRlRl3Name;
+    public String getZyxh_rl_rl3_name() {
+        return zyxh_rl_rl3_name;
     }
 
-    public void setZyxhRlRl3Name(String zyxhRlRl3Name) {
-        this.zyxhRlRl3Name = zyxhRlRl3Name == null ? null : zyxhRlRl3Name.trim();
+    public void setZyxh_rl_rl3_name(String zyxh_rl_rl3_name) {
+        this.zyxh_rl_rl3_name = zyxh_rl_rl3_name;
     }
 
-    public Double getZyxhRlRl3Xiaohao() {
-        return zyxhRlRl3Xiaohao;
+    public Double getZyxh_rl_rl3_xiaohao() {
+        return zyxh_rl_rl3_xiaohao;
     }
 
-    public void setZyxhRlRl3Xiaohao(Double zyxhRlRl3Xiaohao) {
-        this.zyxhRlRl3Xiaohao = zyxhRlRl3Xiaohao;
+    public void setZyxh_rl_rl3_xiaohao(Double zyxh_rl_rl3_xiaohao) {
+        this.zyxh_rl_rl3_xiaohao = zyxh_rl_rl3_xiaohao;
     }
 
-    public Double getZyxhShuliaocl() {
-        return zyxhShuliaocl;
+    public Double getZyxh_shuliaocl() {
+        return zyxh_shuliaocl;
     }
 
-    public void setZyxhShuliaocl(Double zyxhShuliaocl) {
-        this.zyxhShuliaocl = zyxhShuliaocl;
+    public void setZyxh_shuliaocl(Double zyxh_shuliaocl) {
+        this.zyxh_shuliaocl = zyxh_shuliaocl;
     }
 
-    public String getZyxhSlzcylcYl1Name() {
-        return zyxhSlzcylcYl1Name;
+    public String getZyxh_slzcylc_yl1_name() {
+        return zyxh_slzcylc_yl1_name;
     }
 
-    public void setZyxhSlzcylcYl1Name(String zyxhSlzcylcYl1Name) {
-        this.zyxhSlzcylcYl1Name = zyxhSlzcylcYl1Name == null ? null : zyxhSlzcylcYl1Name.trim();
+    public void setZyxh_slzcylc_yl1_name(String zyxh_slzcylc_yl1_name) {
+        this.zyxh_slzcylc_yl1_name = zyxh_slzcylc_yl1_name;
     }
 
-    public Double getZyxhSlzcylcYl1Xiaohao() {
-        return zyxhSlzcylcYl1Xiaohao;
+    public Double getZyxh_slzcylc_yl1_xiaohao() {
+        return zyxh_slzcylc_yl1_xiaohao;
     }
 
-    public void setZyxhSlzcylcYl1Xiaohao(Double zyxhSlzcylcYl1Xiaohao) {
-        this.zyxhSlzcylcYl1Xiaohao = zyxhSlzcylcYl1Xiaohao;
+    public void setZyxh_slzcylc_yl1_xiaohao(Double zyxh_slzcylc_yl1_xiaohao) {
+        this.zyxh_slzcylc_yl1_xiaohao = zyxh_slzcylc_yl1_xiaohao;
     }
 
-    public String getZyxhSlzcylcYl2Name() {
-        return zyxhSlzcylcYl2Name;
+    public String getZyxh_slzcylc_yl2_name() {
+        return zyxh_slzcylc_yl2_name;
     }
 
-    public void setZyxhSlzcylcYl2Name(String zyxhSlzcylcYl2Name) {
-        this.zyxhSlzcylcYl2Name = zyxhSlzcylcYl2Name == null ? null : zyxhSlzcylcYl2Name.trim();
+    public void setZyxh_slzcylc_yl2_name(String zyxh_slzcylc_yl2_name) {
+        this.zyxh_slzcylc_yl2_name = zyxh_slzcylc_yl2_name;
     }
 
-    public Double getZyxhSlzcylcYl2Xiaohao() {
-        return zyxhSlzcylcYl2Xiaohao;
+    public Double getZyxh_slzcylc_yl2_xiaohao() {
+        return zyxh_slzcylc_yl2_xiaohao;
     }
 
-    public void setZyxhSlzcylcYl2Xiaohao(Double zyxhSlzcylcYl2Xiaohao) {
-        this.zyxhSlzcylcYl2Xiaohao = zyxhSlzcylcYl2Xiaohao;
+    public void setZyxh_slzcylc_yl2_xiaohao(Double zyxh_slzcylc_yl2_xiaohao) {
+        this.zyxh_slzcylc_yl2_xiaohao = zyxh_slzcylc_yl2_xiaohao;
     }
 
-    public String getZyxhSlzcylcYl3Name() {
-        return zyxhSlzcylcYl3Name;
+    public String getZyxh_slzcylc_yl3_name() {
+        return zyxh_slzcylc_yl3_name;
     }
 
-    public void setZyxhSlzcylcYl3Name(String zyxhSlzcylcYl3Name) {
-        this.zyxhSlzcylcYl3Name = zyxhSlzcylcYl3Name == null ? null : zyxhSlzcylcYl3Name.trim();
+    public void setZyxh_slzcylc_yl3_name(String zyxh_slzcylc_yl3_name) {
+        this.zyxh_slzcylc_yl3_name = zyxh_slzcylc_yl3_name;
     }
 
-    public Double getZyxhSlzcylcYl3Xiaohao() {
-        return zyxhSlzcylcYl3Xiaohao;
+    public Double getZyxh_slzcylc_yl3_xiaohao() {
+        return zyxh_slzcylc_yl3_xiaohao;
     }
 
-    public void setZyxhSlzcylcYl3Xiaohao(Double zyxhSlzcylcYl3Xiaohao) {
-        this.zyxhSlzcylcYl3Xiaohao = zyxhSlzcylcYl3Xiaohao;
+    public void setZyxh_slzcylc_yl3_xiaohao(Double zyxh_slzcylc_yl3_xiaohao) {
+        this.zyxh_slzcylc_yl3_xiaohao = zyxh_slzcylc_yl3_xiaohao;
     }
 
-    public String getZyxhSlzcylcYl4Name() {
-        return zyxhSlzcylcYl4Name;
+    public String getZyxh_slzcylc_yl4_name() {
+        return zyxh_slzcylc_yl4_name;
     }
 
-    public void setZyxhSlzcylcYl4Name(String zyxhSlzcylcYl4Name) {
-        this.zyxhSlzcylcYl4Name = zyxhSlzcylcYl4Name == null ? null : zyxhSlzcylcYl4Name.trim();
+    public void setZyxh_slzcylc_yl4_name(String zyxh_slzcylc_yl4_name) {
+        this.zyxh_slzcylc_yl4_name = zyxh_slzcylc_yl4_name;
     }
 
-    public Double getZyxhSlzcylcYl4Xiaohao() {
-        return zyxhSlzcylcYl4Xiaohao;
+    public Double getZyxh_slzcylc_yl4_xiaohao() {
+        return zyxh_slzcylc_yl4_xiaohao;
     }
 
-    public void setZyxhSlzcylcYl4Xiaohao(Double zyxhSlzcylcYl4Xiaohao) {
-        this.zyxhSlzcylcYl4Xiaohao = zyxhSlzcylcYl4Xiaohao;
+    public void setZyxh_slzcylc_yl4_xiaohao(Double zyxh_slzcylc_yl4_xiaohao) {
+        this.zyxh_slzcylc_yl4_xiaohao = zyxh_slzcylc_yl4_xiaohao;
     }
 
-    public String getZyxhSlzcylcYl5Name() {
-        return zyxhSlzcylcYl5Name;
+    public String getZyxh_slzcylc_yl5_name() {
+        return zyxh_slzcylc_yl5_name;
     }
 
-    public void setZyxhSlzcylcYl5Name(String zyxhSlzcylcYl5Name) {
-        this.zyxhSlzcylcYl5Name = zyxhSlzcylcYl5Name == null ? null : zyxhSlzcylcYl5Name.trim();
+    public void setZyxh_slzcylc_yl5_name(String zyxh_slzcylc_yl5_name) {
+        this.zyxh_slzcylc_yl5_name = zyxh_slzcylc_yl5_name;
     }
 
-    public Double getZyxhSlzcylcYl5Xiaohao() {
-        return zyxhSlzcylcYl5Xiaohao;
+    public Double getZyxh_slzcylc_yl5_xiaohao() {
+        return zyxh_slzcylc_yl5_xiaohao;
     }
 
-    public void setZyxhSlzcylcYl5Xiaohao(Double zyxhSlzcylcYl5Xiaohao) {
-        this.zyxhSlzcylcYl5Xiaohao = zyxhSlzcylcYl5Xiaohao;
+    public void setZyxh_slzcylc_yl5_xiaohao(Double zyxh_slzcylc_yl5_xiaohao) {
+        this.zyxh_slzcylc_yl5_xiaohao = zyxh_slzcylc_yl5_xiaohao;
     }
 
-    public String getZyxhSlzcylcYl6Name() {
-        return zyxhSlzcylcYl6Name;
+    public String getZyxh_slzcylc_yl6_name() {
+        return zyxh_slzcylc_yl6_name;
     }
 
-    public void setZyxhSlzcylcYl6Name(String zyxhSlzcylcYl6Name) {
-        this.zyxhSlzcylcYl6Name = zyxhSlzcylcYl6Name == null ? null : zyxhSlzcylcYl6Name.trim();
+    public void setZyxh_slzcylc_yl6_name(String zyxh_slzcylc_yl6_name) {
+        this.zyxh_slzcylc_yl6_name = zyxh_slzcylc_yl6_name;
     }
 
-    public Double getZyxhSlzcylcYl6Xiaohao() {
-        return zyxhSlzcylcYl6Xiaohao;
+    public Double getZyxh_slzcylc_yl6_xiaohao() {
+        return zyxh_slzcylc_yl6_xiaohao;
     }
 
-    public void setZyxhSlzcylcYl6Xiaohao(Double zyxhSlzcylcYl6Xiaohao) {
-        this.zyxhSlzcylcYl6Xiaohao = zyxhSlzcylcYl6Xiaohao;
+    public void setZyxh_slzcylc_yl6_xiaohao(Double zyxh_slzcylc_yl6_xiaohao) {
+        this.zyxh_slzcylc_yl6_xiaohao = zyxh_slzcylc_yl6_xiaohao;
     }
 
-    public String getZyxhSlzcylcYl7Name() {
-        return zyxhSlzcylcYl7Name;
+    public String getZyxh_slzcylc_yl7_name() {
+        return zyxh_slzcylc_yl7_name;
     }
 
-    public void setZyxhSlzcylcYl7Name(String zyxhSlzcylcYl7Name) {
-        this.zyxhSlzcylcYl7Name = zyxhSlzcylcYl7Name == null ? null : zyxhSlzcylcYl7Name.trim();
+    public void setZyxh_slzcylc_yl7_name(String zyxh_slzcylc_yl7_name) {
+        this.zyxh_slzcylc_yl7_name = zyxh_slzcylc_yl7_name;
     }
 
-    public Double getZyxhSlzcylcYl7Xiaohao() {
-        return zyxhSlzcylcYl7Xiaohao;
+    public Double getZyxh_slzcylc_yl7_xiaohao() {
+        return zyxh_slzcylc_yl7_xiaohao;
     }
 
-    public void setZyxhSlzcylcYl7Xiaohao(Double zyxhSlzcylcYl7Xiaohao) {
-        this.zyxhSlzcylcYl7Xiaohao = zyxhSlzcylcYl7Xiaohao;
+    public void setZyxh_slzcylc_yl7_xiaohao(Double zyxh_slzcylc_yl7_xiaohao) {
+        this.zyxh_slzcylc_yl7_xiaohao = zyxh_slzcylc_yl7_xiaohao;
     }
 
-    public String getZyxhSlzcylcYl8Name() {
-        return zyxhSlzcylcYl8Name;
+    public String getZyxh_slzcylc_yl8_name() {
+        return zyxh_slzcylc_yl8_name;
     }
 
-    public void setZyxhSlzcylcYl8Name(String zyxhSlzcylcYl8Name) {
-        this.zyxhSlzcylcYl8Name = zyxhSlzcylcYl8Name == null ? null : zyxhSlzcylcYl8Name.trim();
+    public void setZyxh_slzcylc_yl8_name(String zyxh_slzcylc_yl8_name) {
+        this.zyxh_slzcylc_yl8_name = zyxh_slzcylc_yl8_name;
     }
 
-    public Double getZyxhSlzcylcYl8Xiaohao() {
-        return zyxhSlzcylcYl8Xiaohao;
+    public Double getZyxh_slzcylc_yl8_xiaohao() {
+        return zyxh_slzcylc_yl8_xiaohao;
     }
 
-    public void setZyxhSlzcylcYl8Xiaohao(Double zyxhSlzcylcYl8Xiaohao) {
-        this.zyxhSlzcylcYl8Xiaohao = zyxhSlzcylcYl8Xiaohao;
+    public void setZyxh_slzcylc_yl8_xiaohao(Double zyxh_slzcylc_yl8_xiaohao) {
+        this.zyxh_slzcylc_yl8_xiaohao = zyxh_slzcylc_yl8_xiaohao;
     }
 
-    public String getZyxhSlzcylcYl9Name() {
-        return zyxhSlzcylcYl9Name;
+    public String getZyxh_slzcylc_yl9_name() {
+        return zyxh_slzcylc_yl9_name;
     }
 
-    public void setZyxhSlzcylcYl9Name(String zyxhSlzcylcYl9Name) {
-        this.zyxhSlzcylcYl9Name = zyxhSlzcylcYl9Name == null ? null : zyxhSlzcylcYl9Name.trim();
+    public void setZyxh_slzcylc_yl9_name(String zyxh_slzcylc_yl9_name) {
+        this.zyxh_slzcylc_yl9_name = zyxh_slzcylc_yl9_name;
     }
 
-    public Double getZyxhSlzcylcYl9Xiaohao() {
-        return zyxhSlzcylcYl9Xiaohao;
+    public Double getZyxh_slzcylc_yl9_xiaohao() {
+        return zyxh_slzcylc_yl9_xiaohao;
     }
 
-    public void setZyxhSlzcylcYl9Xiaohao(Double zyxhSlzcylcYl9Xiaohao) {
-        this.zyxhSlzcylcYl9Xiaohao = zyxhSlzcylcYl9Xiaohao;
+    public void setZyxh_slzcylc_yl9_xiaohao(Double zyxh_slzcylc_yl9_xiaohao) {
+        this.zyxh_slzcylc_yl9_xiaohao = zyxh_slzcylc_yl9_xiaohao;
     }
 
-    public Double getZyxhShuinicl() {
-        return zyxhShuinicl;
+    public Double getZyxh_shuinicl() {
+        return zyxh_shuinicl;
     }
 
-    public void setZyxhShuinicl(Double zyxhShuinicl) {
-        this.zyxhShuinicl = zyxhShuinicl;
+    public void setZyxh_shuinicl(Double zyxh_shuinicl) {
+        this.zyxh_shuinicl = zyxh_shuinicl;
     }
 
-    public Double getNyxhShengliaoDianhao() {
-        return nyxhShengliaoDianhao;
+    public Double getNyxh_shengliao_dianhao() {
+        return nyxh_shengliao_dianhao;
     }
 
-    public void setNyxhShengliaoDianhao(Double nyxhShengliaoDianhao) {
-        this.nyxhShengliaoDianhao = nyxhShengliaoDianhao;
+    public void setNyxh_shengliao_dianhao(Double nyxh_shengliao_dianhao) {
+        this.nyxh_shengliao_dianhao = nyxh_shengliao_dianhao;
     }
 
-    public Double getNyxhShuliaoMeihao() {
-        return nyxhShuliaoMeihao;
+    public Double getNyxh_shuliao_meihao() {
+        return nyxh_shuliao_meihao;
     }
 
-    public void setNyxhShuliaoMeihao(Double nyxhShuliaoMeihao) {
-        this.nyxhShuliaoMeihao = nyxhShuliaoMeihao;
+    public void setNyxh_shuliao_meihao(Double nyxh_shuliao_meihao) {
+        this.nyxh_shuliao_meihao = nyxh_shuliao_meihao;
     }
 
-    public Double getNyxhShuliaoDianhao() {
-        return nyxhShuliaoDianhao;
+    public Double getNyxh_shuliao_dianhao() {
+        return nyxh_shuliao_dianhao;
     }
 
-    public void setNyxhShuliaoDianhao(Double nyxhShuliaoDianhao) {
-        this.nyxhShuliaoDianhao = nyxhShuliaoDianhao;
+    public void setNyxh_shuliao_dianhao(Double nyxh_shuliao_dianhao) {
+        this.nyxh_shuliao_dianhao = nyxh_shuliao_dianhao;
     }
 
-    public Double getNyxhShuliaoNenghao() {
-        return nyxhShuliaoNenghao;
+    public Double getNyxh_shuliao_nenghao() {
+        return nyxh_shuliao_nenghao;
     }
 
-    public void setNyxhShuliaoNenghao(Double nyxhShuliaoNenghao) {
-        this.nyxhShuliaoNenghao = nyxhShuliaoNenghao;
+    public void setNyxh_shuliao_nenghao(Double nyxh_shuliao_nenghao) {
+        this.nyxh_shuliao_nenghao = nyxh_shuliao_nenghao;
     }
 
-    public Double getNyxhShuiniDianhao() {
-        return nyxhShuiniDianhao;
+    public Double getNyxh_shuini_dianhao() {
+        return nyxh_shuini_dianhao;
     }
 
-    public void setNyxhShuiniDianhao(Double nyxhShuiniDianhao) {
-        this.nyxhShuiniDianhao = nyxhShuiniDianhao;
+    public void setNyxh_shuini_dianhao(Double nyxh_shuini_dianhao) {
+        this.nyxh_shuini_dianhao = nyxh_shuini_dianhao;
     }
 
-    public Double getNyxhShuiniNenghao() {
-        return nyxhShuiniNenghao;
+    public Double getNyxh_shuini_nenghao() {
+        return nyxh_shuini_nenghao;
     }
 
-    public void setNyxhShuiniNenghao(Double nyxhShuiniNenghao) {
-        this.nyxhShuiniNenghao = nyxhShuiniNenghao;
+    public void setNyxh_shuini_nenghao(Double nyxh_shuini_nenghao) {
+        this.nyxh_shuini_nenghao = nyxh_shuini_nenghao;
     }
 
-    public Double getNyxhShuliaoFadian() {
-        return nyxhShuliaoFadian;
+    public Double getNyxh_shuliao_fadian() {
+        return nyxh_shuliao_fadian;
     }
 
-    public void setNyxhShuliaoFadian(Double nyxhShuliaoFadian) {
-        this.nyxhShuliaoFadian = nyxhShuliaoFadian;
+    public void setNyxh_shuliao_fadian(Double nyxh_shuliao_fadian) {
+        this.nyxh_shuliao_fadian = nyxh_shuliao_fadian;
     }
 
-    public Double getFqpfKeliwuYtPaifang() {
-        return fqpfKeliwuYtPaifang;
+    public Double getFqpf_keliwu_yt_paifang() {
+        return fqpf_keliwu_yt_paifang;
     }
 
-    public void setFqpfKeliwuYtPaifang(Double fqpfKeliwuYtPaifang) {
-        this.fqpfKeliwuYtPaifang = fqpfKeliwuYtPaifang;
+    public void setFqpf_keliwu_yt_paifang(Double fqpf_keliwu_yt_paifang) {
+        this.fqpf_keliwu_yt_paifang = fqpf_keliwu_yt_paifang;
     }
 
-    public Double getFqpfKeliwuYtPfnongdu() {
-        return fqpfKeliwuYtPfnongdu;
+    public Double getFqpf_keliwu_yt_pfnongdu() {
+        return fqpf_keliwu_yt_pfnongdu;
     }
 
-    public void setFqpfKeliwuYtPfnongdu(Double fqpfKeliwuYtPfnongdu) {
-        this.fqpfKeliwuYtPfnongdu = fqpfKeliwuYtPfnongdu;
+    public void setFqpf_keliwu_yt_pfnongdu(Double fqpf_keliwu_yt_pfnongdu) {
+        this.fqpf_keliwu_yt_pfnongdu = fqpf_keliwu_yt_pfnongdu;
     }
 
-    public String getFqpfKeliwuYtChuchen() {
-        return fqpfKeliwuYtChuchen;
+    public String getFqpf_keliwu_yt_chuchen() {
+        return fqpf_keliwu_yt_chuchen;
     }
 
-    public void setFqpfKeliwuYtChuchen(String fqpfKeliwuYtChuchen) {
-        this.fqpfKeliwuYtChuchen = fqpfKeliwuYtChuchen == null ? null : fqpfKeliwuYtChuchen.trim();
+    public void setFqpf_keliwu_yt_chuchen(String fqpf_keliwu_yt_chuchen) {
+        this.fqpf_keliwu_yt_chuchen = fqpf_keliwu_yt_chuchen;
     }
 
-    public Double getFqpfKeliwuYwPaifang() {
-        return fqpfKeliwuYwPaifang;
+    public Double getFqpf_keliwu_yw_paifang() {
+        return fqpf_keliwu_yw_paifang;
     }
 
-    public void setFqpfKeliwuYwPaifang(Double fqpfKeliwuYwPaifang) {
-        this.fqpfKeliwuYwPaifang = fqpfKeliwuYwPaifang;
+    public void setFqpf_keliwu_yw_paifang(Double fqpf_keliwu_yw_paifang) {
+        this.fqpf_keliwu_yw_paifang = fqpf_keliwu_yw_paifang;
     }
 
-    public Double getFqpfKeliwuYwPfnongdu() {
-        return fqpfKeliwuYwPfnongdu;
+    public Double getFqpf_keliwu_yw_pfnongdu() {
+        return fqpf_keliwu_yw_pfnongdu;
     }
 
-    public void setFqpfKeliwuYwPfnongdu(Double fqpfKeliwuYwPfnongdu) {
-        this.fqpfKeliwuYwPfnongdu = fqpfKeliwuYwPfnongdu;
+    public void setFqpf_keliwu_yw_pfnongdu(Double fqpf_keliwu_yw_pfnongdu) {
+        this.fqpf_keliwu_yw_pfnongdu = fqpf_keliwu_yw_pfnongdu;
     }
 
-    public String getFqpfKeliwuYwChuchen() {
-        return fqpfKeliwuYwChuchen;
+    public String getFqpf_keliwu_yw_chuchen() {
+        return fqpf_keliwu_yw_chuchen;
     }
 
-    public void setFqpfKeliwuYwChuchen(String fqpfKeliwuYwChuchen) {
-        this.fqpfKeliwuYwChuchen = fqpfKeliwuYwChuchen == null ? null : fqpfKeliwuYwChuchen.trim();
+    public void setFqpf_keliwu_yw_chuchen(String fqpf_keliwu_yw_chuchen) {
+        this.fqpf_keliwu_yw_chuchen = fqpf_keliwu_yw_chuchen;
     }
 
-    public Double getFqpfKeliwuSnmPaifang() {
-        return fqpfKeliwuSnmPaifang;
+    public Double getFqpf_keliwu_snm_paifang() {
+        return fqpf_keliwu_snm_paifang;
     }
 
-    public void setFqpfKeliwuSnmPaifang(Double fqpfKeliwuSnmPaifang) {
-        this.fqpfKeliwuSnmPaifang = fqpfKeliwuSnmPaifang;
+    public void setFqpf_keliwu_snm_paifang(Double fqpf_keliwu_snm_paifang) {
+        this.fqpf_keliwu_snm_paifang = fqpf_keliwu_snm_paifang;
     }
 
-    public Double getFqpfKeliwuSnmNongdu() {
-        return fqpfKeliwuSnmNongdu;
+    public Double getFqpf_keliwu_snm_nongdu() {
+        return fqpf_keliwu_snm_nongdu;
     }
 
-    public void setFqpfKeliwuSnmNongdu(Double fqpfKeliwuSnmNongdu) {
-        this.fqpfKeliwuSnmNongdu = fqpfKeliwuSnmNongdu;
+    public void setFqpf_keliwu_snm_nongdu(Double fqpf_keliwu_snm_nongdu) {
+        this.fqpf_keliwu_snm_nongdu = fqpf_keliwu_snm_nongdu;
     }
 
-    public String getFqpfKeliwuSnmChuchen() {
-        return fqpfKeliwuSnmChuchen;
+    public String getFqpf_keliwu_snm_chuchen() {
+        return fqpf_keliwu_snm_chuchen;
     }
 
-    public void setFqpfKeliwuSnmChuchen(String fqpfKeliwuSnmChuchen) {
-        this.fqpfKeliwuSnmChuchen = fqpfKeliwuSnmChuchen == null ? null : fqpfKeliwuSnmChuchen.trim();
+    public void setFqpf_keliwu_snm_chuchen(String fqpf_keliwu_snm_chuchen) {
+        this.fqpf_keliwu_snm_chuchen = fqpf_keliwu_snm_chuchen;
     }
 
-    public Double getFqpfKeliwuMmPaifang() {
-        return fqpfKeliwuMmPaifang;
+    public Double getFqpf_keliwu_mm_paifang() {
+        return fqpf_keliwu_mm_paifang;
     }
 
-    public void setFqpfKeliwuMmPaifang(Double fqpfKeliwuMmPaifang) {
-        this.fqpfKeliwuMmPaifang = fqpfKeliwuMmPaifang;
+    public void setFqpf_keliwu_mm_paifang(Double fqpf_keliwu_mm_paifang) {
+        this.fqpf_keliwu_mm_paifang = fqpf_keliwu_mm_paifang;
     }
 
-    public Double getFqpfKeliwuMmNongdu() {
-        return fqpfKeliwuMmNongdu;
+    public Double getFqpf_keliwu_mm_nongdu() {
+        return fqpf_keliwu_mm_nongdu;
     }
 
-    public void setFqpfKeliwuMmNongdu(Double fqpfKeliwuMmNongdu) {
-        this.fqpfKeliwuMmNongdu = fqpfKeliwuMmNongdu;
+    public void setFqpf_keliwu_mm_nongdu(Double fqpf_keliwu_mm_nongdu) {
+        this.fqpf_keliwu_mm_nongdu = fqpf_keliwu_mm_nongdu;
     }
 
-    public String getFqpfKeliwuMmChuchen() {
-        return fqpfKeliwuMmChuchen;
+    public String getFqpf_keliwu_mm_chuchen() {
+        return fqpf_keliwu_mm_chuchen;
     }
 
-    public void setFqpfKeliwuMmChuchen(String fqpfKeliwuMmChuchen) {
-        this.fqpfKeliwuMmChuchen = fqpfKeliwuMmChuchen == null ? null : fqpfKeliwuMmChuchen.trim();
+    public void setFqpf_keliwu_mm_chuchen(String fqpf_keliwu_mm_chuchen) {
+        this.fqpf_keliwu_mm_chuchen = fqpf_keliwu_mm_chuchen;
     }
 
-    public Double getFqpfKeliwuBzjPaifang() {
-        return fqpfKeliwuBzjPaifang;
+    public Double getFqpf_keliwu_bzj_paifang() {
+        return fqpf_keliwu_bzj_paifang;
     }
 
-    public void setFqpfKeliwuBzjPaifang(Double fqpfKeliwuBzjPaifang) {
-        this.fqpfKeliwuBzjPaifang = fqpfKeliwuBzjPaifang;
+    public void setFqpf_keliwu_bzj_paifang(Double fqpf_keliwu_bzj_paifang) {
+        this.fqpf_keliwu_bzj_paifang = fqpf_keliwu_bzj_paifang;
     }
 
-    public Double getFqpfKeliwuBzjNongdu() {
-        return fqpfKeliwuBzjNongdu;
+    public Double getFqpf_keliwu_bzj_nongdu() {
+        return fqpf_keliwu_bzj_nongdu;
     }
 
-    public void setFqpfKeliwuBzjNongdu(Double fqpfKeliwuBzjNongdu) {
-        this.fqpfKeliwuBzjNongdu = fqpfKeliwuBzjNongdu;
+    public void setFqpf_keliwu_bzj_nongdu(Double fqpf_keliwu_bzj_nongdu) {
+        this.fqpf_keliwu_bzj_nongdu = fqpf_keliwu_bzj_nongdu;
     }
 
-    public String getFqpfKeliwuBzjChuchen() {
-        return fqpfKeliwuBzjChuchen;
+    public String getFqpf_keliwu_bzj_chuchen() {
+        return fqpf_keliwu_bzj_chuchen;
     }
 
-    public void setFqpfKeliwuBzjChuchen(String fqpfKeliwuBzjChuchen) {
-        this.fqpfKeliwuBzjChuchen = fqpfKeliwuBzjChuchen == null ? null : fqpfKeliwuBzjChuchen.trim();
+    public void setFqpf_keliwu_bzj_chuchen(String fqpf_keliwu_bzj_chuchen) {
+        this.fqpf_keliwu_bzj_chuchen = fqpf_keliwu_bzj_chuchen;
     }
 
-    public Double getFqpfSo2YwPaifang() {
-        return fqpfSo2YwPaifang;
+    public Double getFqpf_SO2_yw_paifang() {
+        return fqpf_SO2_yw_paifang;
     }
 
-    public void setFqpfSo2YwPaifang(Double fqpfSo2YwPaifang) {
-        this.fqpfSo2YwPaifang = fqpfSo2YwPaifang;
+    public void setFqpf_SO2_yw_paifang(Double fqpf_SO2_yw_paifang) {
+        this.fqpf_SO2_yw_paifang = fqpf_SO2_yw_paifang;
     }
 
-    public Double getFqpfSo2YwNongdu() {
-        return fqpfSo2YwNongdu;
+    public Double getFqpf_SO2_yw_nongdu() {
+        return fqpf_SO2_yw_nongdu;
     }
 
-    public void setFqpfSo2YwNongdu(Double fqpfSo2YwNongdu) {
-        this.fqpfSo2YwNongdu = fqpfSo2YwNongdu;
+    public void setFqpf_SO2_yw_nongdu(Double fqpf_SO2_yw_nongdu) {
+        this.fqpf_SO2_yw_nongdu = fqpf_SO2_yw_nongdu;
     }
 
-    public String getFqpfSo2YwChuchen() {
-        return fqpfSo2YwChuchen;
+    public String getFqpf_SO2_yw_chuchen() {
+        return fqpf_SO2_yw_chuchen;
     }
 
-    public void setFqpfSo2YwChuchen(String fqpfSo2YwChuchen) {
-        this.fqpfSo2YwChuchen = fqpfSo2YwChuchen == null ? null : fqpfSo2YwChuchen.trim();
+    public void setFqpf_SO2_yw_chuchen(String fqpf_SO2_yw_chuchen) {
+        this.fqpf_SO2_yw_chuchen = fqpf_SO2_yw_chuchen;
     }
 
-    public Double getFqpfNoxYwPaifang() {
-        return fqpfNoxYwPaifang;
+    public Double getFqpf_NOX_yw_paifang() {
+        return fqpf_NOX_yw_paifang;
     }
 
-    public void setFqpfNoxYwPaifang(Double fqpfNoxYwPaifang) {
-        this.fqpfNoxYwPaifang = fqpfNoxYwPaifang;
+    public void setFqpf_NOX_yw_paifang(Double fqpf_NOX_yw_paifang) {
+        this.fqpf_NOX_yw_paifang = fqpf_NOX_yw_paifang;
     }
 
-    public Double getFqpfNoxYwNongdu() {
-        return fqpfNoxYwNongdu;
+    public Double getFqpf_NOX_yw_nongdu() {
+        return fqpf_NOX_yw_nongdu;
     }
 
-    public void setFqpfNoxYwNongdu(Double fqpfNoxYwNongdu) {
-        this.fqpfNoxYwNongdu = fqpfNoxYwNongdu;
+    public void setFqpf_NOX_yw_nongdu(Double fqpf_NOX_yw_nongdu) {
+        this.fqpf_NOX_yw_nongdu = fqpf_NOX_yw_nongdu;
     }
 
-    public String getFqpfNoxYwChuchen() {
-        return fqpfNoxYwChuchen;
+    public String getFqpf_NOX_yw_chuchen() {
+        return fqpf_NOX_yw_chuchen;
     }
 
-    public void setFqpfNoxYwChuchen(String fqpfNoxYwChuchen) {
-        this.fqpfNoxYwChuchen = fqpfNoxYwChuchen == null ? null : fqpfNoxYwChuchen.trim();
+    public void setFqpf_NOX_yw_chuchen(String fqpf_NOX_yw_chuchen) {
+        this.fqpf_NOX_yw_chuchen = fqpf_NOX_yw_chuchen;
     }
 
-    public Double getFqpfPaShuliaoPaifang() {
-        return fqpfPaShuliaoPaifang;
+    public Double getFqpf_pa_shuliao_paifang() {
+        return fqpf_pa_shuliao_paifang;
     }
 
-    public void setFqpfPaShuliaoPaifang(Double fqpfPaShuliaoPaifang) {
-        this.fqpfPaShuliaoPaifang = fqpfPaShuliaoPaifang;
+    public void setFqpf_pa_shuliao_paifang(Double fqpf_pa_shuliao_paifang) {
+        this.fqpf_pa_shuliao_paifang = fqpf_pa_shuliao_paifang;
     }
 
-    public Double getFqpfPaShuliaoNongdu() {
-        return fqpfPaShuliaoNongdu;
+    public Double getFqpf_pa_shuliao_nongdu() {
+        return fqpf_pa_shuliao_nongdu;
     }
 
-    public void setFqpfPaShuliaoNongdu(Double fqpfPaShuliaoNongdu) {
-        this.fqpfPaShuliaoNongdu = fqpfPaShuliaoNongdu;
+    public void setFqpf_pa_shuliao_nongdu(Double fqpf_pa_shuliao_nongdu) {
+        this.fqpf_pa_shuliao_nongdu = fqpf_pa_shuliao_nongdu;
     }
 
-    public String getFqpfPaShuliaoChuchen() {
-        return fqpfPaShuliaoChuchen;
+    public String getFqpf_pa_shuliao_chuchen() {
+        return fqpf_pa_shuliao_chuchen;
     }
 
-    public void setFqpfPaShuliaoChuchen(String fqpfPaShuliaoChuchen) {
-        this.fqpfPaShuliaoChuchen = fqpfPaShuliaoChuchen == null ? null : fqpfPaShuliaoChuchen.trim();
+    public void setFqpf_pa_shuliao_chuchen(String fqpf_pa_shuliao_chuchen) {
+        this.fqpf_pa_shuliao_chuchen = fqpf_pa_shuliao_chuchen;
     }
 
-    public Byte getFqpfTxgySncr() {
-        return fqpfTxgySncr;
+    public Byte getFqpf_txgy_SNCR() {
+        return fqpf_txgy_SNCR;
     }
 
-    public void setFqpfTxgySncr(Byte fqpfTxgySncr) {
-        this.fqpfTxgySncr = fqpfTxgySncr;
+    public void setFqpf_txgy_SNCR(Byte fqpf_txgy_SNCR) {
+        this.fqpf_txgy_SNCR = fqpf_txgy_SNCR;
     }
 
-    public Byte getFqpfTxgyFjrs() {
-        return fqpfTxgyFjrs;
+    public Byte getFqpf_txgy_fjrs() {
+        return fqpf_txgy_fjrs;
     }
 
-    public void setFqpfTxgyFjrs(Byte fqpfTxgyFjrs) {
-        this.fqpfTxgyFjrs = fqpfTxgyFjrs;
+    public void setFqpf_txgy_fjrs(Byte fqpf_txgy_fjrs) {
+        this.fqpf_txgy_fjrs = fqpf_txgy_fjrs;
     }
 
-    public Byte getFqpfOneplustwo() {
-        return fqpfOneplustwo;
+    public Byte getFqpf_oneplustwo() {
+        return fqpf_oneplustwo;
     }
 
-    public void setFqpfOneplustwo(Byte fqpfOneplustwo) {
-        this.fqpfOneplustwo = fqpfOneplustwo;
+    public void setFqpf_oneplustwo(Byte fqpf_oneplustwo) {
+        this.fqpf_oneplustwo = fqpf_oneplustwo;
     }
 
-    public Byte getFqpfTxgyQita() {
-        return fqpfTxgyQita;
+    public Byte getFqpf_txgy_qita() {
+        return fqpf_txgy_qita;
     }
 
-    public void setFqpfTxgyQita(Byte fqpfTxgyQita) {
-        this.fqpfTxgyQita = fqpfTxgyQita;
+    public void setFqpf_txgy_qita(Byte fqpf_txgy_qita) {
+        this.fqpf_txgy_qita = fqpf_txgy_qita;
     }
 
-    public String getZysbShengliaoFenmoQingkuang() {
-        return zysbShengliaoFenmoQingkuang;
+    public String getZysb_shengliao_fenmo_qingkuang() {
+        return zysb_shengliao_fenmo_qingkuang;
     }
 
-    public void setZysbShengliaoFenmoQingkuang(String zysbShengliaoFenmoQingkuang) {
-        this.zysbShengliaoFenmoQingkuang = zysbShengliaoFenmoQingkuang == null ? null : zysbShengliaoFenmoQingkuang.trim();
+    public void setZysb_shengliao_fenmo_qingkuang(String zysb_shengliao_fenmo_qingkuang) {
+        this.zysb_shengliao_fenmo_qingkuang = zysb_shengliao_fenmo_qingkuang;
     }
 
-    public String getZysbShengliaoXinghao() {
-        return zysbShengliaoXinghao;
+    public String getZysb_shengliao_xinghao() {
+        return zysb_shengliao_xinghao;
     }
 
-    public void setZysbShengliaoXinghao(String zysbShengliaoXinghao) {
-        this.zysbShengliaoXinghao = zysbShengliaoXinghao == null ? null : zysbShengliaoXinghao.trim();
+    public void setZysb_shengliao_xinghao(String zysb_shengliao_xinghao) {
+        this.zysb_shengliao_xinghao = zysb_shengliao_xinghao;
     }
 
-    public String getZysbShengliaoShuliang() {
-        return zysbShengliaoShuliang;
+    public String getZysb_shengliao_shuliang() {
+        return zysb_shengliao_shuliang;
     }
 
-    public void setZysbShengliaoShuliang(String zysbShengliaoShuliang) {
-        this.zysbShengliaoShuliang = zysbShengliaoShuliang == null ? null : zysbShengliaoShuliang.trim();
+    public void setZysb_shengliao_shuliang(String zysb_shengliao_shuliang) {
+        this.zysb_shengliao_shuliang = zysb_shengliao_shuliang;
     }
 
-    public String getZysbYaoGuige() {
-        return zysbYaoGuige;
+    public String getZysb_yao_guige() {
+        return zysb_yao_guige;
     }
 
-    public void setZysbYaoGuige(String zysbYaoGuige) {
-        this.zysbYaoGuige = zysbYaoGuige == null ? null : zysbYaoGuige.trim();
+    public void setZysb_yao_guige(String zysb_yao_guige) {
+        this.zysb_yao_guige = zysb_yao_guige;
     }
 
-    public String getZysbShuinimoFenmo() {
-        return zysbShuinimoFenmo;
+    public String getZysb_shuinimo_fenmo() {
+        return zysb_shuinimo_fenmo;
     }
 
-    public void setZysbShuinimoFenmo(String zysbShuinimoFenmo) {
-        this.zysbShuinimoFenmo = zysbShuinimoFenmo == null ? null : zysbShuinimoFenmo.trim();
+    public void setZysb_shuinimo_fenmo(String zysb_shuinimo_fenmo) {
+        this.zysb_shuinimo_fenmo = zysb_shuinimo_fenmo;
     }
 
-    public String getZysbShuinimoGuige() {
-        return zysbShuinimoGuige;
+    public String getZysb_shuinimo_guige() {
+        return zysb_shuinimo_guige;
     }
 
-    public void setZysbShuinimoGuige(String zysbShuinimoGuige) {
-        this.zysbShuinimoGuige = zysbShuinimoGuige == null ? null : zysbShuinimoGuige.trim();
+    public void setZysb_shuinimo_guige(String zysb_shuinimo_guige) {
+        this.zysb_shuinimo_guige = zysb_shuinimo_guige;
     }
 
-    public String getZysbShuinimoShuliang() {
-        return zysbShuinimoShuliang;
+    public String getZysb_shuinimo_shuliang() {
+        return zysb_shuinimo_shuliang;
     }
 
-    public void setZysbShuinimoShuliang(String zysbShuinimoShuliang) {
-        this.zysbShuinimoShuliang = zysbShuinimoShuliang == null ? null : zysbShuinimoShuliang.trim();
+    public void setZysb_shuinimo_shuliang(String zysb_shuinimo_shuliang) {
+        this.zysb_shuinimo_shuliang = zysb_shuinimo_shuliang;
     }
 }
