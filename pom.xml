@@ -37,18 +37,16 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<!--&lt;!&ndash;MongoDB依赖&ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-starter-data-mongodb</artifactId>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>org.mongodb</groupId>-->
+			<!--<artifactId>mongo-java-driver</artifactId>-->
+		<!--</dependency>-->
 
-            <!-- ... spring security dependencies ... -->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.security</groupId>-->
-            <!--<artifactId>spring-security-web</artifactId>-->
-            <!--<version>4.2.7.BUILD-SNAPSHOT</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.security</groupId>-->
-            <!--<artifactId>spring-security-config</artifactId>-->
-            <!--<version>4.2.7.BUILD-SNAPSHOT</version>-->
-        <!--</dependency>-->
         <!--spring security依赖-->
 	    <dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -61,6 +59,7 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -114,12 +113,12 @@
 			<artifactId>kaptcha</artifactId>
 			<version>2.3.2</version>
 		</dependency>
-		<!--  mybatis  -->
-		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>1.3.1</version>
-		</dependency>
+		<!--&lt;!&ndash;  mybatis  &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>org.mybatis.spring.boot</groupId>-->
+			<!--<artifactId>mybatis-spring-boot-starter</artifactId>-->
+			<!--<version>1.3.1</version>-->
+		<!--</dependency>-->
 
     </dependencies>
 

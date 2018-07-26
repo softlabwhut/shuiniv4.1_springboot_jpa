@@ -20,6 +20,7 @@ public class QuestionnaireDiaoyan {
         this.comp_name = comp_name;
     }
 
+
     @Column(name = "comp_name")
     private String comp_name;
 
