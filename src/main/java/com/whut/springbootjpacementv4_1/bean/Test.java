@@ -3,6 +3,8 @@ package com.whut.springbootjpacementv4_1.bean;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import java.util.concurrent.ConcurrentHashMap;
+
 public class Test {
     public static void main(String[] args) {
         String pas="dadadadad";
