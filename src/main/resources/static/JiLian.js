@@ -34,8 +34,8 @@ function quy() {
         var keyI = document.getElementById("city" + i).value;
         var key = city_key[keyI];
         var value = document.getElementById("data" + i).value;
-        a.append(key.valueOf(), value.valueOf());
-        console.log("key:" + key.valueOf() + "  value:" + value.valueOf());
+        a.append(key, value);
+        console.log("key:" + key + "  value:" + value);
     }
     ;
     console.log(a);
@@ -62,14 +62,7 @@ function loadData(a) {
 
 //页面画查询结果的表格
 /**
- * <tr>
- <th width="20%">企业名称</th>
- <th width="10%">水泥产量</th>
- <th width="10%">熟料产量</th>
- <th width="20%">地址</th>
- <th width="10%">年运转天数</th>
- <th width="15%">操作</th>
- </tr>
+ *
  * @param str
  *
  */
