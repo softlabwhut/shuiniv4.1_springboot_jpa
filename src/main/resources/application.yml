@@ -1,6 +1,10 @@
 server:
   port: 8080
 spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
   #数据源配置
   #data:
     #mongodb:
