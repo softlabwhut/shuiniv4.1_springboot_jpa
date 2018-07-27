@@ -216,54 +216,39 @@
 <div class="container">
     <div class="main">
 
-
+        <br/>
+        <hr/>
         <br/>
         <div class="form-table">
             <table class="table">
-                <caption ><h2 align="center">查询结果</h2></caption>
+                <caption>购物清单</caption>
                 <thead>
                 <tr>
-                    <th >企业名称</th>
-                    <th >水泥产量</th>
-                    <th >熟料产量</th>
-                    <th >地址</th>
-                    <th >年运转天数</th>
-
+                    <th>#</th>
+                    <th>名称</th>
+                    <th>价格</th>
+                    <th>数量</th>
                 </tr>
                 </thead>
                 <tbody>
-                <#list data as lender>
                 <tr>
-                    <td>${lender.comp_name!""}</td>
-                    <td>${lender.zyxh_shuinicl!""}</td>
-                    <td>${lender.zyxh_shuliaocl!""}</td>
-                    <td>${lender.comp_address!""}</td>
-                    <td>${lender.year_run_days!""}</td>
-
-
-
+                    <th scope="row">1</th>
+                    <td>西瓜</td>
+                    <td>12</td>
+                    <td>4</td>
                 </tr>
-                </#list>
-
-
-                <#--<tr>-->
-                    <#--<th scope="row">1</th>-->
-                    <#--<td>西瓜</td>-->
-                    <#--<td>12</td>-->
-                    <#--<td>4</td>-->
-                <#--</tr>-->
-                <#--<tr>-->
-                    <#--<th scope="row">2</th>-->
-                    <#--<td>方便面</td>-->
-                    <#--<td>2</td>-->
-                    <#--<td>10</td>-->
-                <#--</tr>-->
-                <#--<tr>-->
-                    <#--<th scope="row">3</th>-->
-                    <#--<td>奶茶</td>-->
-                    <#--<td>10</td>-->
-                    <#--<td>2</td>-->
-                <#--</tr>-->
+                <tr>
+                    <th scope="row">2</th>
+                    <td>方便面</td>
+                    <td>2</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>奶茶</td>
+                    <td>10</td>
+                    <td>2</td>
+                </tr>
                 </tbody>
             </table>
         </div>

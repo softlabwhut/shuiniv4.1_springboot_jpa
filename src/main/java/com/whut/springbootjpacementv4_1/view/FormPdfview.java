@@ -22,12 +22,22 @@ import java.util.Map;
  * Created by Administrator on 2016/8/19 0019.
  */
 public class FormPdfview extends AbstractITextPdfView {
+
+    private String templateFileName="test.ftl";
+
+    public FormPdfview(String templateFileName) {
+        this.templateFileName = templateFileName;
+    }
+
+    public FormPdfview() {
+    }
+
     @Override
     protected void buildPdfDocument(Map<String, Object> model,
                                     Document document, PdfWriter writer, HttpServletRequest request,
                                     HttpServletResponse response) throws Exception {
         URL fileResource = FormPdfview.class.getResource("/templates");
-        String html = FreemarkerUtils.loadFtlHtml(new File(fileResource.getFile()), "simpleForm.ftl", model);
+        String html = FreemarkerUtils.loadFtlHtml(new File(fileResource.getFile()), "test.ftl", model);
 
        // XMLWorkerHelper.getInstance().parseXHtml(writer, document, new StringReader(html));
         XMLWorkerHelper.getInstance().parseXHtml(writer, document, new ByteArrayInputStream(html.getBytes()), Charset.forName("UTF-8"), new AsianFontProvider() );

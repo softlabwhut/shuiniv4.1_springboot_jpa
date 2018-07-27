@@ -1,4 +1,5 @@
 window.onload = function () {
+    querypara="?";
     num = 1; //查询条件总个数 全局变量
     city_json = '{"资源消耗":["熟料烧成用原材料（含替代原料）", "燃料（含替代燃料）", "水泥制成用原材料（含替代原料)"],"废气排放":["颗粒物", "SO2 ", "NOx", "喷氨", "脱硝工艺"],"能源消耗":["生料粉磨工段电耗(kWh/t)", "可比熟料综合煤耗(kgce/t)", "可比熟料综合电耗(kWh/t)",\n' +
         '        "可比熟料综合能耗(kgce/t)", "可比水泥综合电耗(kWh/t)", "可比水泥综合能耗(kgce/t)",\n' +
@@ -25,20 +26,29 @@ window.onload = function () {
     loadData();
 
 }
+function daochu() {
+    var url="http://localhost:8080/export"+querypara;
+    window.open(url);
+    console.log("url: "+url);
 
-
+}
 //点击查询
 function quy() {
     var a = new FormData();
+    querypara="?";
     for (var i = 0; i < num; i++) {
         var keyI = document.getElementById("city" + i).value;
         var key = city_key[keyI];
         var value = document.getElementById("data" + i).value;
         a.append(key, value);
-        console.log("key:" + key + "  value:" + value);
-    }
-    ;
-    console.log(a);
+        querypara=querypara+key+"="+value+"&";
+      //  console.log("key:" + key + "  value:" + value);
+    };
+    var a_json=JSON.stringify(a);
+    console.log(a_json);
+    console.log(querypara);
+
+    //   alert(querypara);
     //向发送后台发送请求 返回请求数据
     loadData(a);
 
@@ -71,9 +81,9 @@ function drawdata(str) {
     list.innerHTML = "";
     var data = str.content;
     for (var i = 0; i < data.length; i++) {
-        console.log(data[i]);
+   //     console.log(data[i]);
         var id = data[i].id;
-        console.log("id=" + id);
+       // console.log("id=" + id);
         var comp_name = data[i].comp_name;
         var zyxh_shuinicl = data[i].zyxh_shuinicl;
         var zyxh_shuliaocl = data[i].zyxh_shuliaocl;
