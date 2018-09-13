@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head class="v_scrollbar">
     <meta charset="UTF-8"/>
-    <title>Simple Form</title>
+    <title>水泥问卷查询结果</title>
     <style>
         html.v_scrollbar {
             overflow-y: scroll;
