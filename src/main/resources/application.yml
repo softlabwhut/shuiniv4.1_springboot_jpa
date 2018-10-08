@@ -1,7 +1,14 @@
 server:
   port: 8080
 spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
   #数据源配置
+  #data:
+    #mongodb:
+      #uri: mongodb://localhost:27017
   datasource:
     url: jdbc:mysql://localhost:3306/cement_v4.1?characterEncoding=utf-8
     username: root
